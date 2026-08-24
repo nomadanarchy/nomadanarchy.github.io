@@ -9,18 +9,37 @@ const copyAddress = document.getElementById("copyAddress");
 const verifyToast = document.getElementById("verifyToast");
 
 async function updateDiscordWidget() {
-  if (!config.discordGuildId || config.discordGuildId === "1540938382400692325") {
+  if (!config.discordGuildId) {
     memberCount.textContent = "—";
-    discordStatus.textContent = "Add Discord Server ID";
+    discordStatus.textContent = "Discord Unavailable";
     return;
   }
+
   try {
-    const response = await fetch(`https://discord.com/api/guilds/${config.discordGuildId}/widget.json`, {cache:"no-store"});
-    if (!response.ok) throw new Error();
+    const response = await fetch(
+      `https://discord.com/api/guilds/${config.discordGuildId}/widget.json`,
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Discord returned ${response.status}`);
+    }
+
     const data = await response.json();
-    memberCount.textContent = typeof data.presence_count === "number" ? data.presence_count.toLocaleString() : "—";
-    discordStatus.textContent = typeof data.presence_count === "number" ? "Members Online" : "Discord Online";
-  } catch {
+
+    memberCount.textContent =
+      typeof data.presence_count === "number"
+        ? data.presence_count.toLocaleString()
+        : "—";
+
+    discordStatus.textContent =
+      typeof data.presence_count === "number"
+        ? "Members Online"
+        : "Discord Online";
+
+  } catch (error) {
+    console.error("Discord widget error:", error);
+
     memberCount.textContent = "—";
     discordStatus.textContent = "Discord Unavailable";
   }

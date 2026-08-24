@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://nomadanarchy.online">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomad Anarchy - Welcome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="A Minecraft anarchy server. Play on Java or in your browser. Supporting 1.7.10 to the latest version.">
+
+  <meta property="og:title" content="Nomad Anarchy - Welcome" />
+  <meta property="og:description" content="A Minecraft anarchy server. Play on Java or in your browser. Supporting 1.7.10 to the latest version." />
+  <meta property="og:url" content="https://nomadanarchy.online" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nodmad Anarchy" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nomad Anarchy - Welcome" />
+  <meta name="twitter:description" content="A Minecraft anarchy server. Play on Java or in your browser. Supporting 1.7.10 to the latest version." />
+  <meta name="twitter:image" content="https://nomadanarchy.online/logo.png" />
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <main class="page">
+    <section class="grid page-enter">
+      <div class="logo-column">
+        <a class="card logo-card" href="#">
+          <img class="logo-placeholder" src="./logo.png" alt="Logo placeholder">
+        </a>
+        <button class="address-pill" id="copyAddress" type="button">
+          <i class="fa-regular fa-copy copy-icon" aria-hidden="true"></i>
+          <strong>nomad-anarchy.eagler.host</strong>
+        </button>
+      </div>
+
+      <a class="card image-card store-card" href="vote">
+        <img src="https://picsum.photos/id/1015/900/600" alt="">
+        <div class="shade"></div>
+        <h2>Vote</h2>
+      </a>
+
+      <a class="card discord-card" href="https://discord.com/invite/gK5yRMT3C">
+        <img class="brand-icon discord-icon" src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord">
+        <strong id="memberCount">—</strong>
+        <span><i></i> <span id="discordStatus">Loading Discord...</span></span>
+      </a>
+
+      <a class="card image-card stats-card" href="eaglercraft">
+        <img src="https://picsum.photos/id/1036/900/600" alt="">
+        <div class="shade"></div>
+        <h2>Eaglercraft</h2>
+      </a>
+
+      <a class="card image-card join-card" href="https://www.youtube.com/@NomadAnarchy">
+        <img src="./how-to-join.png" alt="">
+        <div class="shade"></div>
+        <div class="join-content">
+          <h2>How To Join</h2>
+        </div>
+      </a>
+    </section>
+
+    <footer class="footer-enter">
+      <div class="footer-logo"><span>🛖</span> NOMAD SMP</div>
+      <small>Not associated with Mojang or Microsoft</small>
+
+      <div class="socials">
+        <a href="https://www.youtube.com/@NomadAnarchy" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube"></a>
+        <a href="https://www.instagram.com/nomadanarchy/" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@nomadanarchy" aria-label="TikTok"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok"></a>
+        <a href="https://discord.com/invite/gK5yRMT3C" aria-label="Discord"><img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord"></a>
+      </div>
+    </footer>
+  </main>
+  <div class="verify-toast" id="verifyToast" role="status" aria-live="polite">
+    <span class="checkmark">✓</span>
+    <span>Copied!</span>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

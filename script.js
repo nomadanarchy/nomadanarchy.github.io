@@ -1,6 +1,6 @@
 const config = {
   discordGuildId: "1540938382400692325",
-  serverAddress: "nomad-anarchy.eagler.host"
+  serverAddress: "play.nomadanarchy.online"
 };
 
 const memberCount = document.getElementById("memberCount");

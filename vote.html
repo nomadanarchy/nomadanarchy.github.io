@@ -1,161 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://nomadanarchy.online/vote">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nomad Anarchy - Vote</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="vote.css">
-  <meta name="description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members.">
+<link rel="canonical" href="https://nomadanarchy.online/vote">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomad Anarchy - Vote</title>
+<meta name="description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members.">
+<meta property="og:title" content="Nomad Anarchy - Vote">
+<meta property="og:description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members.">
+<meta property="og:url" content="https://nomadanarchy.online/vote">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nomad Anarchy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nomad Anarchy - Vote">
+<meta name="twitter:description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members.">
+<meta name="twitter:image" content="https://nomadanarchy.online/logo.png">
+<link rel="icon" type="image/png" href="./logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <meta property="og:title" content="Nomad Anarchy - Vote" />
-  <meta property="og:description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members." />
-  <meta property="og:url" content="https://nomadanarchy.online/vote" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Nomad Anarchy" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nomad Anarchy - Vote" />
-  <meta name="twitter:description" content="Vote for Nomad Anarchy on 4 server lists. This will help keep the server up and running and get new members." />
-  <meta name="twitter:image" content="https://nomadanarchy.online/logo.png" />
-  <link rel="icon" type="image/png" href="./logo.png">
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="bg-pattern"></div>
+<div id="scroll-progress"></div>
+<nav id="navbar">
+<div class="container nav-inner">
+<a href="index.html" class="logo"><img class="nav-logo-img" src="./logo.png" alt="Nomad Anarchy">NOMAD ANARCHY</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="eaglercraft.html">Eaglercraft</a>
+<a href="vote.html">Vote</a>
+<a href="https://discord.com/invite/gK5yRMT3C" target="_blank" rel="noopener" class="discord-link">Discord</a>
+</div>
+<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="eaglercraft.html">Eaglercraft</a>
+<a href="vote.html">Vote</a>
+<a href="https://discord.com/invite/gK5yRMT3C" target="_blank" rel="noopener">Discord</a>
+</div>
 
-  <main class="vote-page page-enter">
-    <a class="back-link" href="index.html">
-      <i class="fa-solid fa-arrow-left"></i>
-      Back to Nomad Anarchy
-    </a>
+<main>
+<header class="page-hero">
+<div class="container">
+<div class="kicker" style="justify-content:center">SUPPORT NOMAD ANARCHY</div>
+<h1>Vote for <span class="accent">Nomad Anarchy.</span></h1>
+<p>Your votes help more players discover Nomad Anarchy and help the server grow. There are no voting rewards — every vote simply supports the server.</p>
+</div>
+</header>
 
-    <header class="vote-header">
-      <span class="vote-kicker">SUPPORT NOMAD ANARCHY</span>
-      <h1>Vote for Nomad Anarchy</h1>
-      <p>
-        Your votes help more players discover Nomad Anarchy and help us improve
-        the server. There are no voting rewards — every vote simply supports the server.
-      </p>
-    </header>
+<section>
+<div class="container">
+<div class="section-header reveal" data-aos="fade-up">
+<div class="kicker">OFFICIAL VOTE LINKS</div>
+<h2>Choose a listing</h2>
+<p>Vote on as many as you can.</p>
+</div>
 
-    <section class="notice-card">
-      <div class="notice-icon"><i class="fa-solid fa-heart"></i></div>
-      <div>
-        <strong>Voting helps the server grow</strong>
-        <p>More votes can improve our position on server lists and bring new players to the community.</p>
-      </div>
-    </section>
+<div class="list-grid">
+<a class="list-row reveal delay-1" href="https://servers.eaglercraft.com/servers/a4eb1e24-73be-4734-86dc-7563bf7059c0" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="90">
+<div class="list-icon"><i class="fa-solid fa-ranking-star"></i></div>
+<div class="list-info"><strong>Eagler Server List</strong><span>The most important one!</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-    <section class="vote-section">
-      <div class="section-heading">
-        <div>
-          <span class="section-kicker">OFFICIAL VOTE LINKS</span>
-          <h2>Choose a listing</h2>
-        </div>
-        <span class="vote-count">Vote on as many as you can</span>
-      </div>
+<a class="list-row reveal delay-2" href="https://topeaglerservers.com/server/cadcc048/Nomad-Anarchy" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+<div class="list-icon"><i class="fa-solid fa-list-ol"></i></div>
+<div class="list-info"><strong>TopEaglerServers</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-      <div class="vote-list">
-        <a class="vote-row" href="https://servers.eaglercraft.com/servers/ea7e1627-5321-4c82-8956-4aa4a8d16359" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-ranking-star"></i></div>
-          <div class="site-info">
-            <strong>Eagler Server List</strong>
-            <span>The most important one!</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-3" href="https://eaglercraftservers.com/server/nomad-anarchy-eagler-host" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="270">
+<div class="list-icon"><i class="fa-solid fa-ranking-star"></i></div>
+<div class="list-info"><strong>EaglercraftServers</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-        <a class="vote-row" href="https://topeaglerservers.com/server/cadcc048/Nomad-Anarchy" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-list-ol"></i></div>
-          <div class="site-info">
-            <strong>TopEaglerServers</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-4" href="https://minecraft.buzz/vote/nomad-anarchy" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="360">
+<div class="list-icon"><i class="fa-solid fa-server"></i></div>
+<div class="list-info"><strong>Minecraft.Buzz</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-        <a class="vote-row" href="https://eaglercraftservers.com/server/nomad-anarchy-eagler-host" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-ranking-star"></i></div>
-          <div class="site-info">
-            <strong>EaglercraftServers</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-5" href="https://minecraftservers.org/server/692316" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="450">
+<div class="list-icon"><i class="fa-solid fa-server"></i></div>
+<div class="list-info"><strong>MinecraftServers.org</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-        <a class="vote-row" href="https://minecraft.buzz/vote/nomad-anarchy" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-server"></i></div>
-          <div class="site-info">
-            <strong>Minecraft.Buzz</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-1" href="https://minecraft-server-list.com/server/522885/" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="90">
+<div class="list-icon"><i class="fa-solid fa-server"></i></div>
+<div class="list-info"><strong>Minecraft Server List</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-        <a class="vote-row" href="https://minecraftservers.org/server/692316" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-server"></i></div>
-          <div class="site-info">
-            <strong>MinecraftServers.org</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-2" href="https://minecraft-serverlist.com/server/6248" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+<div class="list-icon"><i class="fa-solid fa-server"></i></div>
+<div class="list-info"><strong>MCSL</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
 
-        <a class="vote-row" href="https://minecraft-server-list.com/server/522885/" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-server"></i></div>
-          <div class="site-info">
-            <strong>Minecraft Server List</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<a class="list-row reveal delay-3" href="https://minecraft-mp.com/server-s363097" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="270">
+<div class="list-icon"><i class="fa-solid fa-server"></i></div>
+<div class="list-info"><strong>Minecraft MP</strong><span>Vote for Nomad Anarchy</span></div>
+<span class="list-action">VOTE ↗</span>
+</a>
+</div>
 
-        <a class="vote-row" href="https://minecraft-serverlist.com/server/6248" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-server"></i></div>
-          <div class="site-info">
-            <strong>MCSL</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<div class="command-card reveal delay-4" data-aos="fade-up" data-aos-delay="360">
+<div>
+<strong>Need the vote links later?</strong>
+<p>Use the command below in-game to quickly open the voting prompt.</p>
+</div>
+<code>/vote</code>
+</div>
 
-        <a class="vote-row" href="https://minecraft-mp.com/server-s363097" target="_blank" rel="noopener">
-          <div class="site-icon"><i class="fa-solid fa-server"></i></div>
-          <div class="site-info">
-            <strong>Minecraft MP</strong>
-            <span>Vote for Nomad Anarchy</span>
-          </div>
-          <span class="vote-action">Vote <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </a>
+<p class="notice">Nomad Anarchy does not provide items, ranks, keys, money, or other in-game rewards for voting.</p>
+</div>
+</section>
+</main>
 
-      </div>
-    </section>
-
-    <section class="command-card">
-      <div class="command-copy">
-        <span class="section-kicker">IN-GAME</span>
-        <h2>Need the vote links later?</h2>
-        <p>Use the command below in-game to quickly open the voting prompt.</p>
-      </div>
-      <code>/vote</code>
-    </section>
-
-    <p class="fine-print">
-      Nomad Anarchy does not provide items, ranks, keys, money, or other in-game rewards for voting.
-    </p>
-
-    <footer class="footer-enter">
-      <div class="footer-logo"><span>🛖</span> NOMAD SMP</div>
-      <small>Not associated with Mojang or Microsoft</small>
-      <div class="socials">
-        <a href="https://www.youtube.com/@NomadAnarchy" aria-label="YouTube"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube"></a>
-        <a href="https://www.instagram.com/nomadanarchy/" aria-label="Instagram"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram"></a>
-        <a href="https://www.tiktok.com/@nomadanarchy" aria-label="TikTok"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok"></a>
-        <a href="https://discord.com/invite/gK5yRMT3C" aria-label="Discord"><img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord"></a>
-      </div>
-    </footer>
-  </main>
+<footer>
+<div class="container footer-inner">
+<div class="footer-logo">NOMAD ANARCHY</div>
+<div>Not associated with Mojang or Microsoft.</div>
+<div>© 2026 Nomad Anarchy</div>
+</div>
+</footer>
+<div class="toast" id="toast">Copied</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:800,easing:"ease-out-cubic",once:true,offset:80});</script>
+<script src="./script.js"></script>
 </body>
 </html>

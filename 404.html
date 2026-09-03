@@ -1,137 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomad Anarchy - 404</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #111;
-            --card: #202020;
-            --text: #f7f7f7;
-            --muted: #888;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            width: min(500px, calc(100% - 40px));
-            text-align: center;
-            animation: fadeIn .7s cubic-bezier(.22, 1, .36, 1);
-        }
-
-        .card {
-            background: var(--card);
-            border-radius: 22px;
-            padding: 45px 35px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, .2);
-        }
-
-        .error {
-            font-size: 82px;
-            font-weight: 800;
-            letter-spacing: -4px;
-            line-height: 1;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            margin: 0 0 10px;
-            font-size: 28px;
-        }
-
-        p {
-            margin: 0 0 28px;
-            color: var(--muted);
-            font-size: 15px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 13px 24px;
-            border-radius: 28px;
-            background: #292929;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform .18s ease, background .18s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            background: #333;
-        }
-
-        .button:active {
-            transform: scale(.97);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px) scale(.98);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .container {
-                animation: none;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .card {
-                padding: 35px 25px;
-            }
-
-            .error {
-                font-size: 65px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 | Nomad Anarchy</title>
+<meta name="description" content="This Nomad Anarchy page does not exist.">
+<link rel="icon" type="image/png" href="./logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
+<div id="scroll-progress"></div>
+<nav id="navbar">
+<div class="container nav-inner">
+<a href="index.html" class="logo"><span class="logo-mark"></span>NOMAD ANARCHY</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="eaglercraft.html">Eaglercraft</a>
+<a href="vote.html">Vote</a>
+<a href="https://discord.com/invite/gK5yRMT3C" target="_blank" rel="noopener" class="discord-link">Discord</a>
+</div>
+<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="eaglercraft.html">Eaglercraft</a>
+<a href="vote.html">Vote</a>
+<a href="https://discord.com/invite/gK5yRMT3C" target="_blank" rel="noopener">Discord</a>
+</div>
 
-    <main class="container">
-        <div class="card">
-            <div class="error">404</div>
-
-            <h1>Page Not Found</h1>
-
-            <p>
-                The page you're looking for doesn't exist or has been moved.
-            </p>
-
-            <a class="button" href="/">
-                Go Home
-            </a>
-        </div>
-    </main>
-
-</body>
-</html>
+<main><header class="page-hero"><div class="container"><div class="kicker" style="justify-content:center">404</div><h1>You've wandered <span class="accent">too far.</span></h1><p>This page doesn't exist. Head back to the wasteland.</p><div style="margin-top:28px"><a class="ip-copy" href="index.html">← Back home</a></div></div></header></main><footer><div class="container footer-inner"><div class="footer-logo">NOMAD ANARCHY</div><div>Not associated with Mojang or Microsoft.</div><div>© 2026 Nomad Anarchy</div></div></footer><div class="toast" id="toast">Copied</div><script src="./script.js"></script></body></html>

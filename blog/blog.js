@@ -15,8 +15,11 @@
       "'": "&#039;"
     }[c]));
 
+  const RAW_BASE =
+    "https://raw.githubusercontent.com/nomadanarchy/nomadanarchy.github.io/master/blog/";
+
   const asset = (file) =>
-    `${BLOG_BASE}${String(file).replace(/^\/+/, "")}`;
+    `${RAW_BASE}${String(file).replace(/^\/+/, "")}`;
 
   const postUrl = (slug) =>
     `${BLOG_BASE}posts/${encodeURIComponent(slug)}/`;
@@ -117,9 +120,10 @@
 
     console.log("[Nomad Blog] Loading:", markdownUrl);
 
-    const response = await fetch(markdownUrl, {
-      cache: "no-store"
-    });
+    const response = await fetch(
+      markdownAsset(`posts/${encodeURIComponent(slug)}.md`),
+      { cache: "no-store" }
+    );
 
     if (!response.ok) {
       throw new Error(

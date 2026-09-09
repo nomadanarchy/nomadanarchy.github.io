@@ -21,19 +21,19 @@
   <url>
     <loc>https://nomadanarchy.online/blog</loc>
     <lastmod>2026-09-09</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nomadanarchy.online/blog/posts/how-to-join-eaglercraft/</loc>
     <lastmod>2026-09-09</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://nomadanarchy.online/blog/posts/how-to-join-java-edition/</loc>
     <lastmod>2026-09-09</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
 </urlset>

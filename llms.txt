@@ -1,0 +1,17 @@
+# Nomad Anarchy
+
+> Nomad Anarchy is a Minecraft anarchy server with a persistent world, no land claims and no staff intervention. It supports Java Edition and Eaglercraft. Server address: play.nomadanarchy.online. Native version: 1.12.2. Java Edition clients from 1.7.10 to the latest supported version can connect.
+
+## Pages
+
+- [Main](https://nomadanarchy.online/): Nomad Anarchy is a Minecraft server with no rules and no land claims. Staff do not step in. The world never resets. Play Java Edition or in your browser.
+- [Eaglercraft](https://nomadanarchy.online/eaglercraft): Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.
+- [Vote](https://nomadanarchy.online/vote): Vote for Nomad Anarchy on eight server lists to help new players find the server. Voting gives no in-game rewards. You can vote on as many as you like.
+- [Privacy](https://nomadanarchy.online/privacy): How the Nomad Anarchy website, the Eaglercraft clients and the game server handle your data, and which outside companies may see it.
+
+## Community
+
+- [Discord](https://discord.com/invite/gK5yRMT3C): Join the Nomad Anarchy Discord server.
+- [YouTube](https://www.youtube.com/@NomadAnarchy): Official Nomad Anarchy YouTube channel.
+- [Instagram](https://www.instagram.com/nomadanarchy/): Official Nomad Anarchy Instagram profile.
+- [TikTok](https://www.tiktok.com/@nomadanarchy): Official Nomad Anarchy TikTok account.

@@ -1,69 +1,178 @@
+// Nomad Anarchy - script.js
 
-const config={discordGuildId:"1540938382400692325",serverAddress:"play.nomadanarchy.online"};
+// --- background fallback ---
+// delete this block once bg.jpg is in place.
+(function () {
+    var img = new Image();
+    img.onerror = function () {
+        document.body.style.backgroundImage = "url('https://picsum.photos/seed/nomad/1920/1080')";
+    };
+    img.src = 'bg.jpg';
+})();
 
-const toast=document.getElementById("toast");
-let toastTimer;
-function showToast(text){
-  if(!toast)return;
-  toast.textContent=text;toast.classList.add("active");
-  clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("active"),2200);
-}
-async function copyText(text){
-  try{await navigator.clipboard.writeText(text)}
-  catch{
-    const input=document.createElement("input");input.value=text;
-    document.body.appendChild(input);input.select();document.execCommand("copy");input.remove();
-  }
-  showToast("Copied "+text);
-}
-document.querySelectorAll("[data-copy]").forEach(el=>{
-  el.addEventListener("click",()=>copyText(el.dataset.copy));
-});
+// --- discord widget ---
+const SHOW_MEMBERS = true;
+const WIDGET_URL = 'https://discord.com/api/guilds/1540938382400692325/widget.json';
+const FALLBACK_INVITE = 'https://discord.com/invite/gK5yRMT3C';
 
-const nav=document.getElementById("navbar");
-const progress=document.getElementById("scroll-progress");
-function scrollUI(){
-  const max=document.documentElement.scrollHeight-innerHeight;
-  if(progress)progress.style.width=(max>0?(scrollY/max)*100:0)+"%";
-  if(nav)nav.classList.toggle("scrolled",scrollY>35);
-}
-addEventListener("scroll",scrollUI,{passive:true});scrollUI();
+const STATUS_COLORS = {
+    online: '#3ba55d',
+    idle:   '#faa61a',
+    dnd:    '#ed4245'
+};
 
-const hamburger=document.getElementById("hamburger");
-const mobileMenu=document.getElementById("mobileMenu");
-hamburger?.addEventListener("click",()=>{
-  hamburger.classList.toggle("active");mobileMenu.classList.toggle("active");
-});
-mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
-  hamburger.classList.remove("active");mobileMenu.classList.remove("active");
-}));
+function renderWidget(container, data) {
+    while (container.firstChild) container.removeChild(container.firstChild);
 
-async function updateDiscord(){
-  const count=document.getElementById("memberCount");
-  const status=document.getElementById("discordStatus");
-  if(!count||!status)return;
-  try{
-    const r=await fetch(`https://discord.com/api/guilds/${config.discordGuildId}/widget.json`,{cache:"no-store"});
-    if(!r.ok)throw new Error();
-    const d=await r.json();
-    if(typeof d.presence_count==="number"){
-      count.textContent=d.presence_count.toLocaleString();
-      status.textContent="Discord members online";
-    }else{
-      count.textContent="—";status.textContent="Discord online";
+    var name = data.name || 'Nomad Anarchy';
+    var invite = data.instant_invite || FALLBACK_INVITE;
+    var online = (typeof data.presence_count === 'number') ? data.presence_count : 0;
+
+    var nameLink = document.createElement('a');
+    nameLink.href = invite;
+    nameLink.rel = 'noopener';
+    nameLink.target = '_blank';
+    nameLink.textContent = name;
+    nameLink.style.fontWeight = 'bold';
+    nameLink.style.display = 'block';
+    container.appendChild(nameLink);
+
+    var countLine = document.createElement('p');
+    countLine.textContent = online + ' online';
+    countLine.style.margin = '2px 0 6px 0';
+    container.appendChild(countLine);
+
+    if (!SHOW_MEMBERS || !data.members) return;
+
+    var list = document.createElement('div');
+    list.className = 'widget-list';
+    var members = data.members.slice().sort(function (a, b) {
+        var order = { online: 0, idle: 1, dnd: 2, offline: 3 };
+        var ao = order[a.status] || 4;
+        var bo = order[b.status] || 4;
+        if (ao !== bo) return ao - bo;
+        return (a.username || '').localeCompare(b.username || '');
+    });
+    for (var i = 0; i < members.length; i++) {
+        var m = members[i];
+        if (!m || m.status === 'offline') continue;
+        var row = document.createElement('div');
+        row.className = 'widget-row';
+
+        var img = document.createElement('img');
+        img.className = 'widget-avatar';
+        img.src = m.avatar_url || '';
+        img.alt = '';
+        img.width = 20;
+        img.height = 20;
+        img.loading = 'lazy';
+        img.referrerPolicy = 'no-referrer';
+        row.appendChild(img);
+
+        var status = document.createElement('span');
+        status.className = 'widget-status';
+        var color = STATUS_COLORS[m.status];
+        if (color) status.style.backgroundColor = color;
+        row.appendChild(status);
+
+        var uname = document.createElement('span');
+        uname.className = 'widget-name';
+        uname.textContent = m.username || '';
+        row.appendChild(uname);
+
+        list.appendChild(row);
     }
-  }catch{
-    count.textContent="—";status.textContent="Discord unavailable";
-  }
+    container.appendChild(list);
 }
-updateDiscord();setInterval(updateDiscord,60000);
 
-/* Small mouse/parallax movement for the hero art. */
-const art=document.querySelector(".hero-character img");
-if(art && matchMedia("(pointer:fine)").matches){
-  addEventListener("mousemove",e=>{
-    const x=(e.clientX/innerWidth-.5)*8;
-    const y=(e.clientY/innerHeight-.5)*8;
-    art.style.marginLeft=`${x}px`;art.style.marginTop=`${y}px`;
-  },{passive:true});
+function renderWidgetError(container) {
+    while (container.firstChild) container.removeChild(container.firstChild);
+    var p = document.createElement('p');
+    p.textContent = 'member list unavailable';
+    p.style.margin = '0 0 4px 0';
+    container.appendChild(p);
+    var a = document.createElement('a');
+    a.href = FALLBACK_INVITE;
+    a.rel = 'noopener';
+    a.target = '_blank';
+    a.textContent = 'join on discord';
+    container.appendChild(a);
 }
+
+function loadWidget() {
+    var containers = document.getElementsByClassName('discord-widget');
+    if (!containers.length) return;
+
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].textContent = 'loading discord members';
+    }
+
+    var controller;
+    var timeoutId;
+    if (typeof AbortController !== 'undefined') {
+        controller = new AbortController();
+        timeoutId = setTimeout(function () {
+            try { controller.abort(); } catch (e) { /* ignore */ }
+        }, 6000);
+    }
+
+    var opts = { credentials: 'omit' };
+    if (controller) opts.signal = controller.signal;
+
+    var finish = function (ok, data) {
+        if (timeoutId) clearTimeout(timeoutId);
+        for (var i = 0; i < containers.length; i++) {
+            if (ok) {
+                renderWidget(containers[i], data);
+            } else {
+                renderWidgetError(containers[i]);
+            }
+        }
+    };
+
+    try {
+        if (typeof fetch !== 'function') {
+            finish(false, null);
+            return;
+        }
+        fetch(WIDGET_URL, opts).then(function (resp) {
+            if (!resp || !resp.ok) { finish(false, null); return; }
+            return resp.json().then(function (data) { finish(true, data); }, function () { finish(false, null); });
+        }, function () { finish(false, null); }).catch(function () { finish(false, null); });
+    } catch (e) {
+        finish(false, null);
+    }
+}
+
+// --- theme toggle ---
+document.addEventListener('DOMContentLoaded', function () {
+    var toggleBtn = document.getElementById('theme-btn');
+    function setTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        try { localStorage.setItem('theme', t); } catch (e) { /* ignore */ }
+        updateButton(t);
+    }
+    function updateButton(t) {
+        if (!toggleBtn) return;
+        var next = t === 'dark' ? 'light' : 'dark';
+        toggleBtn.setAttribute('aria-label', 'switch to ' + next + ' mode');
+        toggleBtn.setAttribute('title', 'switch to ' + next + ' mode');
+        if (t === 'dark') {
+            // sun icon
+            toggleBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><line x1="8" y1="1" x2="8" y2="3"/><line x1="8" y1="13" x2="8" y2="15"/><line x1="1" y1="8" x2="3" y2="8"/><line x1="13" y1="8" x2="15" y2="8"/><line x1="2.9" y1="2.9" x2="4.3" y2="4.3"/><line x1="11.7" y1="11.7" x2="13.1" y2="13.1"/><line x1="2.9" y1="13.1" x2="4.3" y2="11.7"/><line x1="11.7" y1="4.3" x2="13.1" y2="2.9"/></svg>';
+        } else {
+            // moon icon (crescent opening to the right)
+            toggleBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.5 2.2A6 6 0 1 0 7.5 13.8A6 6 0 0 1 7.5 2.2z"/></svg>';
+        }
+    }
+    if (toggleBtn) {
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        updateButton(current);
+        toggleBtn.addEventListener('click', function () {
+            var now = document.documentElement.getAttribute('data-theme') || 'light';
+            setTheme(now === 'dark' ? 'light' : 'dark');
+        });
+    }
+
+    loadWidget();
+});

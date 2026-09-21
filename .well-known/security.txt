@@ -1,0 +1,5 @@
+# Renew the Expires date before it passes.
+Contact: https://discord.com/invite/gK5yRMT3C
+Expires: 2027-09-20T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://nomadanarchy.online/.well-known/security.txt

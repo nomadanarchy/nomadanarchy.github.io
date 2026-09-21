@@ -5,59 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page not found - Nomad Anarchy</title>
     <meta name="description" content="This page does not exist. Go back to the Nomad Anarchy home page.">
-    <link rel="canonical" href="https://nomadanarchy.online/404">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Nomad Anarchy">
-    <meta property="og:title" content="Page not found - Nomad Anarchy">
-    <meta property="og:description" content="This page does not exist. Go back to the Nomad Anarchy home page.">
-    <meta property="og:url" content="https://nomadanarchy.online/404">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Page not found - Nomad Anarchy">
-    <meta name="twitter:description" content="This page does not exist. Go back to the Nomad Anarchy home page.">
     <meta name="robots" content="noindex">
     <link rel="icon" href="/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="stylesheet" href="/style.css">
+    <meta name="theme-color" content="#f4f0e4">
     <script>
-    (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+    (function(){var t='light';try{var saved=localStorage.getItem('theme');if(saved==='dark'||saved==='light'){t=saved;}}catch(e){}document.documentElement.setAttribute('data-theme',t);var meta=document.querySelector('meta[name="theme-color"]');if(meta){meta.setAttribute('content',t==='dark'?'#1a1a1a':'#f4f0e4');}})();
     </script>
 </head>
 <body>
+<a class="skip" href="#main">skip to content</a>
 
 <div class="wrap">
 
-    <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;">Nomad Anarchy</a></div>
+    <header>
+    <div class="site-title" translate="no"><a href="/">Nomad Anarchy</a></div>
 
-    <div class="nav">
+    <nav class="nav" aria-label="main">
         <a href="/">main</a><span class="nav-sep">&raquo;</span>
         <a href="/eaglercraft">eaglercraft</a><span class="nav-sep">&raquo;</span>
-        <a href="/vote">vote page</a><span class="nav-sep">&raquo;</span>
+        <a href="/vote">vote</a><span class="nav-sep">&raquo;</span>
         <a href="https://discord.com/invite/gK5yRMT3C" rel="noopener">discord</a>
         <button id="theme-btn" class="theme-btn" type="button"></button>
-    </div>
+    </nav>
+    </header>
 
     <div class="columns">
 
-        <div class="sidebar sidebar-left">
+        <aside class="sidebar sidebar-left">
             <div class="panel">
                 <p>server ip</p>
-                <span class="server-ip">play.nomadanarchy.online</span>
-                <p>native version 1.12.2. Java Edition connects from 1.7.10 through the latest release. Eaglercraft works in the browser.</p>
+                <span class="server-ip" translate="no">play.nomadanarchy.online</span>
+                <p>native version <span translate="no">1.12.2</span>. Java Edition connects from <span translate="no">1.7.10</span> through the latest release. Eaglercraft works in the browser.</p>
                 <p><a href="/eaglercraft">play in browser with Eaglercraft</a></p>
             </div>
-        </div>
+        </aside>
 
         <div class="center">
-            <div class="panel">
+            <main id="main" class="panel" tabindex="-1">
                 <div class="center-scroll">
                     <h1>Page not found</h1>
-                    <p>That page does not exist. You typed it wrong or it got blown up.</p>
+                    <p>That page does not exist.</p>
                     <p><a href="/">go back to the home page</a></p>
                 </div>
-            </div>
+            </main>
         </div>
 
-        <div class="sidebar sidebar-right">
+        <aside class="sidebar sidebar-right">
             <div class="panel">
                 <p>world started 22 september 2026, 10:49 PM CDT.</p>
                 <div class="pinned-note">
@@ -71,7 +66,7 @@
                     <p>not affiliated with Mojang or Microsoft.</p>
                 </div>
             </div>
-        </div>
+        </aside>
 
     </div>
 

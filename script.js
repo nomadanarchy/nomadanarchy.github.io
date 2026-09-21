@@ -1,15 +1,5 @@
 // Nomad Anarchy - script.js
 
-// --- background fallback ---
-// delete this block once bg.jpg is in place.
-(function () {
-    var img = new Image();
-    img.onerror = function () {
-        document.body.style.backgroundImage = "url('https://picsum.photos/seed/nomad/1920/1080')";
-    };
-    img.src = 'bg.jpg';
-})();
-
 // --- discord widget ---
 const SHOW_MEMBERS = true;
 const WIDGET_URL = 'https://discord.com/api/guilds/1540938382400692325/widget.json';
@@ -46,10 +36,13 @@ function renderWidget(container, data) {
 
     var list = document.createElement('div');
     list.className = 'widget-list';
+    var order = { online: 0, idle: 1, dnd: 2, offline: 3 };
+    function rank(s) {
+        return Object.prototype.hasOwnProperty.call(order, s) ? order[s] : 4;
+    }
     var members = data.members.slice().sort(function (a, b) {
-        var order = { online: 0, idle: 1, dnd: 2, offline: 3 };
-        var ao = order[a.status] || 4;
-        var bo = order[b.status] || 4;
+        var ao = rank(a.status);
+        var bo = rank(b.status);
         if (ao !== bo) return ao - bo;
         return (a.username || '').localeCompare(b.username || '');
     });
@@ -149,6 +142,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var toggleBtn = document.getElementById('theme-btn');
     function setTheme(t) {
         document.documentElement.setAttribute('data-theme', t);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', t === 'dark' ? '#1a1a1a' : '#f4f0e4');
         try { localStorage.setItem('theme', t); } catch (e) { /* ignore */ }
         updateButton(t);
     }
@@ -168,6 +163,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (toggleBtn) {
         var current = document.documentElement.getAttribute('data-theme') || 'light';
         updateButton(current);
+        function warmOtherBackground() {
+            toggleBtn.removeEventListener('mouseenter', warmOtherBackground);
+            toggleBtn.removeEventListener('focus', warmOtherBackground);
+            toggleBtn.removeEventListener('touchstart', warmOtherBackground);
+            var theme = document.documentElement.getAttribute('data-theme') || 'light';
+            var img = new Image();
+            img.src = theme === 'dark' ? '/bg-light.jpg' : '/bg-dark.jpg';
+        }
+        toggleBtn.addEventListener('mouseenter', warmOtherBackground);
+        toggleBtn.addEventListener('focus', warmOtherBackground);
+        toggleBtn.addEventListener('touchstart', warmOtherBackground, { passive: true });
         toggleBtn.addEventListener('click', function () {
             var now = document.documentElement.getAttribute('data-theme') || 'light';
             setTheme(now === 'dark' ? 'light' : 'dark');

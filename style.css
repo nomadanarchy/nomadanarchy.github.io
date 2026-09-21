@@ -1,5 +1,5 @@
 /* Nomad Anarchy - style.css */
-/* default theme is light. dark overrides via html[data-theme="dark"] */
+/* each theme has its own background image. default theme is light. dark overrides via html[data-theme="dark"] */
 
 * {
     margin: 0;
@@ -8,17 +8,22 @@
 }
 
 html, body { height: 100%; }
+html { color-scheme: light; background-color: #4c6353; }
+html[data-theme="dark"] { color-scheme: dark; background-color: #304125; }
+
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: url('/bg-light.jpg') center center / cover no-repeat;
+}
+html[data-theme="dark"]::before { background-image: url('/bg-dark.jpg'); }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #2a2620;
-    background-color: #b8b0a0;
-    background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     min-height: 100vh;
     line-height: 1.25;
 }
@@ -28,19 +33,20 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.30);
     z-index: -1;
 }
 
-a { color: #3b4a5a; text-decoration: underline; }
+a { color: #33404e; text-decoration: underline; }
 a:hover { color: #1a2028; }
-a:visited { color: #5a4a3b; }
+a:visited { color: #4a3a2c; }
 
 .wrap {
-    width: 980px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     min-height: 100vh;
-    padding: 30px 0 20px 0;
+    padding: 30px 10px 20px 10px;
     position: relative;
 }
 
@@ -51,8 +57,27 @@ a:visited { color: #5a4a3b; }
     font-size: 72px;
     font-weight: 900;
     color: #e8dfc4;
-    text-shadow: 4px 4px 0 #000, 6px 6px 12px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 3px rgba(0,0,0,0.6), 0 4px 14px rgba(0,0,0,0.7);
     margin-bottom: 12px;
+}
+
+.site-title a { color: inherit; text-decoration: none; }
+.site-title a:visited { color: inherit; }
+
+/* keyboard skip link */
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+}
+.skip:focus {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 10;
+    background: rgba(250,247,238,0.74);
+    border: 1px solid rgba(255,255,255,0.75);
+    padding: 6px 10px;
 }
 
 /* nav bar */
@@ -95,7 +120,7 @@ a:visited { color: #5a4a3b; }
     line-height: 0;
 }
 
-.theme-btn:focus { outline: 2px solid #3b4a5a; outline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid #33404e; outline-offset: 2px; }
 .theme-btn svg { display: block; }
 
 /* three column layout */
@@ -108,6 +133,8 @@ a:visited { color: #5a4a3b; }
 
 /* panels - all three same treatment, fixed 540px tall */
 .panel {
+    width: 100%;
+    min-width: 0;
     background: rgba(250,247,238,0.74);
     border: 1px solid rgba(255,255,255,0.75);
     border-radius: 8px;
@@ -134,7 +161,7 @@ a:visited { color: #5a4a3b; }
 
 /* sidebars */
 .sidebar {
-    width: 172px;
+    width: 184px;
     flex-shrink: 0;
     font-size: 11px;
     display: flex;
@@ -160,6 +187,10 @@ a:visited { color: #5a4a3b; }
 }
 
 /* scrollbar */
+.center-scroll, .discord-widget {
+    scrollbar-width: thin;
+    scrollbar-color: #b0a890 #e4e0d0;
+}
 .center-scroll::-webkit-scrollbar { width: 10px; }
 .center-scroll::-webkit-scrollbar-track { background: #e4e0d0; border: 1px solid #8a8270; }
 .center-scroll::-webkit-scrollbar-thumb { background: #b0a890; border: 1px solid #8a8270; }
@@ -184,7 +215,7 @@ a:visited { color: #5a4a3b; }
 .last-updated {
     margin-top: 14px;
     font-size: 10px;
-    color: #6a6250;
+    color: #4a4232;
     font-style: italic;
 }
 
@@ -202,7 +233,7 @@ a:visited { color: #5a4a3b; }
 /* vote list */
 .vote-list { list-style-type: decimal; margin-left: 22px; }
 .vote-list li { margin-bottom: 6px; }
-.vote-list .important { color: #8a5a20; font-weight: bold; }
+.vote-list .important { color: #5c3a0c; font-weight: bold; }
 .vote-list a { word-break: break-all; }
 
 /* bottom-pinned note in right sidebar */
@@ -211,7 +242,7 @@ a:visited { color: #5a4a3b; }
     padding-top: 8px;
     font-size: 10px;
     line-height: 1.3;
-    color: #5a5240;
+    color: #403a2c;
 }
 
 .pinned-note .links {
@@ -278,10 +309,9 @@ a:visited { color: #5a4a3b; }
 /* ===================== DARK THEME OVERRIDES ===================== */
 html[data-theme="dark"] body {
     color: #e8dfc4;
-    background-color: #1a1a1a;
 }
 html[data-theme="dark"] body::before {
-    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.20);
 }
 html[data-theme="dark"] a { color: #e8dfc4; }
 html[data-theme="dark"] a:hover { color: #fff; }
@@ -290,8 +320,11 @@ html[data-theme="dark"] a:visited { color: #c8bfa4; }
 /* title stays cream always, but shadow stays dark in dark too */
 html[data-theme="dark"] .site-title {
     color: #e8dfc4;
-    text-shadow: 4px 4px 0 #000, 6px 6px 12px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 3px rgba(0,0,0,0.6), 0 4px 14px rgba(0,0,0,0.7);
 }
+
+html[data-theme="dark"] .site-title a,
+html[data-theme="dark"] .site-title a:visited { color: inherit; }
 
 html[data-theme="dark"] .nav {
     background: rgba(10,10,12,0.6);
@@ -302,13 +335,24 @@ html[data-theme="dark"] .nav a { color: #e8dfc4; }
 html[data-theme="dark"] .nav a:hover { color: #fff; }
 html[data-theme="dark"] .nav-sep { color: #555; }
 html[data-theme="dark"] .theme-btn { color: #e8dfc4; }
-html[data-theme="dark"] .theme-btn:focus { outline-color: #e8dfc4; }
+html[data-theme="dark"] a:focus-visible,
+html[data-theme="dark"] button:focus-visible { outline-color: #e8dfc4; }
+html[data-theme="dark"] .skip:focus {
+    background: rgba(10,10,12,0.6);
+    border-color: rgba(255,255,255,0.3);
+}
 
 html[data-theme="dark"] .panel {
     background: rgba(10,10,12,0.6);
     border: 1px solid rgba(255,255,255,0.3);
     color: #e8dfc4;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+html[data-theme="dark"] .center-scroll,
+html[data-theme="dark"] .discord-widget {
+    scrollbar-width: thin;
+    scrollbar-color: #3a4250 #1a2028;
 }
 
 html[data-theme="dark"] .center-scroll::-webkit-scrollbar-track { background: #1a2028; border-color: #000; }

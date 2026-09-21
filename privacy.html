@@ -11,14 +11,22 @@
     <meta property="og:title" content="Privacy Policy - Nomad Anarchy">
     <meta property="og:description" content="How the Nomad Anarchy website, the Eaglercraft clients and the game server handle your data, and which outside companies may see it.">
     <meta property="og:url" content="https://nomadanarchy.online/privacy">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://nomadanarchy.online/logo.png">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <meta property="og:image:alt" content="Nomad Anarchy logo">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Privacy Policy - Nomad Anarchy">
     <meta name="twitter:description" content="How the Nomad Anarchy website, the Eaglercraft clients and the game server handle your data, and which outside companies may see it.">
+    <meta name="twitter:image" content="https://nomadanarchy.online/logo.png">
+    <meta name="twitter:image:alt" content="Nomad Anarchy logo">
     <link rel="icon" href="/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="stylesheet" href="/style.css">
+    <meta name="theme-color" content="#f4f0e4">
     <script>
-    (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+    (function(){var t='light';try{var saved=localStorage.getItem('theme');if(saved==='dark'||saved==='light'){t=saved;}}catch(e){}document.documentElement.setAttribute('data-theme',t);var meta=document.querySelector('meta[name="theme-color"]');if(meta){meta.setAttribute('content',t==='dark'?'#1a1a1a':'#f4f0e4');}})();
     </script>
     <script type="application/ld+json">
     {
@@ -48,32 +56,35 @@
     </script>
 </head>
 <body>
+<a class="skip" href="#main">skip to content</a>
 
 <div class="wrap">
 
-    <div class="site-title"><a href="/" style="color:inherit;text-decoration:none;">Nomad Anarchy</a></div>
+    <header>
+    <div class="site-title" translate="no"><a href="/">Nomad Anarchy</a></div>
 
-    <div class="nav">
+    <nav class="nav" aria-label="main">
         <a href="/">main</a><span class="nav-sep">&raquo;</span>
         <a href="/eaglercraft">eaglercraft</a><span class="nav-sep">&raquo;</span>
-        <a href="/vote">vote page</a><span class="nav-sep">&raquo;</span>
+        <a href="/vote">vote</a><span class="nav-sep">&raquo;</span>
         <a href="https://discord.com/invite/gK5yRMT3C" rel="noopener">discord</a>
         <button id="theme-btn" class="theme-btn" type="button"></button>
-    </div>
+    </nav>
+    </header>
 
     <div class="columns">
 
-        <div class="sidebar sidebar-left">
+        <aside class="sidebar sidebar-left">
             <div class="panel">
                 <p>server ip</p>
-                <span class="server-ip">play.nomadanarchy.online</span>
-                <p>native version 1.12.2. Java Edition connects from 1.7.10 through the latest release. Eaglercraft works in the browser.</p>
+                <span class="server-ip" translate="no">play.nomadanarchy.online</span>
+                <p>native version <span translate="no">1.12.2</span>. Java Edition connects from <span translate="no">1.7.10</span> through the latest release. Eaglercraft works in the browser.</p>
                 <p><a href="/eaglercraft">play in browser with Eaglercraft</a></p>
             </div>
-        </div>
+        </aside>
 
         <div class="center">
-            <div class="panel">
+            <main id="main" class="panel" tabindex="-1">
                 <div class="center-scroll">
                     <h1>Privacy Policy</h1>
 
@@ -88,35 +99,36 @@
                     </ul>
 
                     <h2>Playing in the browser (Eaglercraft)</h2>
-                    <p>The Eaglercraft clients run in your browser and are served from this site. When you play, your browser opens a websocket connection to the game server. The client may also connect to third-party relays for LAN worlds and voice chat, which we don't run:</p>
+                    <p>The Eaglercraft clients run in your browser and are served from this site. When you play, your browser opens a websocket connection to the game server. The client may also connect to relays, which are used for LAN worlds. These are the default relays built into Eaglercraft X:</p>
                     <ul>
-                        <li><a href="http://relay.deev.is" rel="noopener">relay.deev.is</a></li>
-                        <li><a href="http://relay.lax1dude.net" rel="noopener">relay.lax1dude.net</a></li>
-                        <li><a href="http://relay.shhnowisnottheti.me" rel="noopener">relay.shhnowisnottheti.me</a></li>
+                        <li><span translate="no" class="notranslate">relay.deev.is</span>: run by lax1dude (<a href="https://deev.is" rel="noopener noreferrer" translate="no" class="notranslate">deev.is</a>)</li>
+                        <li><span translate="no" class="notranslate">relay.lax1dude.net</span>: run by lax1dude (<a href="https://lax1dude.net" rel="noopener noreferrer" translate="no" class="notranslate">lax1dude.net</a>)</li>
+                        <li><span translate="no" class="notranslate">relay.shhnowisnottheti.me</span>: run by ayunami (<a href="https://shhnowisnottheti.me" rel="noopener noreferrer" translate="no" class="notranslate">shhnowisnottheti.me</a>)</li>
                     </ul>
+                    <p>We don't run these relays or control what they log, and their operators' sites are linked above.</p>
                     <p>World data and settings from the client are stored locally in your browser.</p>
 
                     <h2>The Discord member list</h2>
-                    <p>The sidebar on the home, Eaglercraft and vote pages shows who is online in our Discord server. Your browser requests this from <a href="https://discord.com" rel="noopener">discord.com</a> and loads avatars from <a href="https://cdn.discordapp.com" rel="noopener">cdn.discordapp.com</a>, so Discord receives your IP address and browser details. We don't control what Discord logs. The list shows the usernames and avatars of members who are online, which Discord publishes through the server widget setting.</p>
+                    <p>The sidebar on the home, Eaglercraft and vote pages shows who is online in our Discord server. Your browser requests this from <span translate="no" class="notranslate">discord.com</span> and loads avatars from <span translate="no" class="notranslate">cdn.discordapp.com</span>, so Discord receives your IP address and browser details. We don't control what Discord logs. The list shows the usernames and avatars of members who are online, which Discord publishes through the server widget setting.</p>
                     <p><a href="https://discord.com/privacy" rel="noopener">Discord privacy policy</a>.</p>
 
                     <h2>The game server</h2>
-                    <p>Players on Java Edition or Eaglercraft connect directly to the game server at <a href="http://play.nomadanarchy.online" rel="noopener">play.nomadanarchy.online</a>, which is separate from the website and is not behind Cloudflare or GitHub.</p>
-                    <p>The server logs anything that PaperMC 1.12.2, PaperMC 26.2, and Velocity log, which includes IP addresses, usernames, chat messages, and commands. Logs are kept forever.</p>
+                    <p>Players on Java Edition or Eaglercraft connect directly to the game server at <span translate="no" class="notranslate">play.nomadanarchy.online</span>, which is separate from the website and is not behind Cloudflare or GitHub.</p>
+                    <p>The server logs anything that PaperMC <span translate="no">1.12.2</span>, PaperMC <span translate="no">26.2</span>, and Velocity log, which includes IP addresses, usernames, chat messages, and commands. Logs are kept forever.</p>
                     <p>The game server is hosted by Oracle. <a href="https://www.oracle.com/legal/privacy/privacy-policy/" rel="noopener">Oracle privacy policy</a>.</p>
 
                     <h2>Other sites</h2>
-                    <p>YouTube, Instagram, TikTok, and the server list sites linked from the vote page are third parties with their own policies.</p>
+                    <p>YouTube, Instagram, TikTok, and the server list sites linked from the vote page are third parties with their own policies. Old links to /blog on this site redirect to blog.nomadanarchy.online, which is a separate site and is not covered by this page.</p>
 
                     <h2>Contact</h2>
                     <p>Questions go to the <a href="https://discord.com/invite/gK5yRMT3C" rel="noopener">Discord</a>.</p>
 
                     <p class="last-updated">last updated 20th september 2026</p>
                 </div>
-            </div>
+            </main>
         </div>
 
-        <div class="sidebar sidebar-right">
+        <aside class="sidebar sidebar-right">
             <div class="panel">
                 <p>world started 22 september 2026, 10:49 PM CDT.</p>
                 <div class="pinned-note">
@@ -130,7 +142,7 @@
                     <p>not affiliated with Mojang or Microsoft.</p>
                 </div>
             </div>
-        </div>
+        </aside>
 
     </div>
 

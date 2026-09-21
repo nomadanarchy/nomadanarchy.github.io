@@ -11,14 +11,22 @@
     <meta property="og:title" content="Nomad Anarchy - Minecraft Anarchy Server">
     <meta property="og:description" content="Nomad Anarchy is a Minecraft server with no rules and no land claims. Staff do not step in. The world never resets. Play Java Edition or in your browser.">
     <meta property="og:url" content="https://nomadanarchy.online/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://nomadanarchy.online/logo.png">
+    <meta property="og:image:width" content="256">
+    <meta property="og:image:height" content="256">
+    <meta property="og:image:alt" content="Nomad Anarchy logo">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nomad Anarchy - Minecraft Anarchy Server">
     <meta name="twitter:description" content="Nomad Anarchy is a Minecraft server with no rules and no land claims. Staff do not step in. The world never resets. Play Java Edition or in your browser.">
+    <meta name="twitter:image" content="https://nomadanarchy.online/logo.png">
+    <meta name="twitter:image:alt" content="Nomad Anarchy logo">
     <link rel="icon" href="/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="stylesheet" href="/style.css">
+    <meta name="theme-color" content="#f4f0e4">
     <script>
-    (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+    (function(){var t='light';try{var saved=localStorage.getItem('theme');if(saved==='dark'||saved==='light'){t=saved;}}catch(e){}document.documentElement.setAttribute('data-theme',t);var meta=document.querySelector('meta[name="theme-color"]');if(meta){meta.setAttribute('content',t==='dark'?'#1a1a1a':'#f4f0e4');}})();
     </script>
     <script type="application/ld+json">
     {
@@ -60,36 +68,38 @@
     </script>
 </head>
 <body>
+<a class="skip" href="#main">skip to content</a>
 
 <div class="wrap">
 
-    <h1 class="site-title"><a href="/" style="color:inherit;text-decoration:none;">Nomad Anarchy</a></h1>
+    <header>
+    <h1 class="site-title" translate="no"><a href="/">Nomad Anarchy</a></h1>
 
-    <div class="nav">
-        <a href="/">main</a><span class="nav-sep">&raquo;</span>
+    <nav class="nav" aria-label="main">
+        <a href="/" aria-current="page">main</a><span class="nav-sep">&raquo;</span>
         <a href="/eaglercraft">eaglercraft</a><span class="nav-sep">&raquo;</span>
         <a href="/vote">vote</a><span class="nav-sep">&raquo;</span>
         <a href="https://discord.com/invite/gK5yRMT3C" rel="noopener">discord</a>
         <button id="theme-btn" class="theme-btn" type="button"></button>
-    </div>
+    </nav>
+    </header>
 
     <div class="columns">
 
-        <div class="sidebar sidebar-left">
+        <aside class="sidebar sidebar-left">
             <div class="panel">
                 <p>server ip</p>
-                <span class="server-ip">play.nomadanarchy.online</span>
-                <p>native version 1.12.2. Java Edition connects from 1.7.10 through the latest release. Eaglercraft works in the browser.</p>
+                <span class="server-ip" translate="no">play.nomadanarchy.online</span>
+                <p>native version <span translate="no">1.12.2</span>. Java Edition connects from <span translate="no">1.7.10</span> through the latest release. Eaglercraft works in the browser.</p>
                 <p><a href="/eaglercraft">play in browser with Eaglercraft</a></p>
             </div>
-        </div>
+        </aside>
 
         <div class="center">
-            <div class="panel">
+            <main id="main" class="panel" tabindex="-1">
                 <div class="center-scroll">
-                    <h2>Nomad Anarchy</h2>
-                    <p>Nomad Anarchy is a Minecraft anarchy server. The world is persistent, there are no land claims, and there is no staff intervention. Griefing, stealing, and exploits are allowed. The world will not be reset.</p>
-                    <p>Not associated with Mojang or Microsoft.</p>
+                    <h2 translate="no">Nomad Anarchy</h2>
+                    <p><span translate="no">Nomad Anarchy</span> is a Minecraft anarchy server. The world is persistent, there are no land claims, and there is no staff intervention. Griefing, stealing, and exploits are allowed. The world will not be reset.</p>
 
                     <h2>News</h2>
                     <div class="news-entry">
@@ -98,13 +108,13 @@
                     </div>
                     <p class="last-updated">last updated 20th september 2026</p>
                 </div>
-            </div>
+            </main>
         </div>
 
-        <div class="sidebar sidebar-right">
+        <aside class="sidebar sidebar-right">
             <div class="panel">
                 <p>world started 22 september 2026, 10:49 PM CDT.</p>
-                <div class="discord-widget" role="region" aria-label="Discord members online"></div>
+                <div class="discord-widget" translate="no" aria-live="polite" role="region" aria-label="Discord members online"></div>
                 <div class="pinned-note">
                     <ul class="links">
                         <li><a href="https://discord.com/invite/gK5yRMT3C" rel="noopener">discord</a></li>
@@ -116,7 +126,7 @@
                     <p>not affiliated with Mojang or Microsoft.</p>
                 </div>
             </div>
-        </div>
+        </aside>
 
     </div>
 

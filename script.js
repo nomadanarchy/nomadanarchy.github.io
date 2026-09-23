@@ -3,7 +3,7 @@
 // --- discord widget ---
 const SHOW_MEMBERS = true;
 const WIDGET_URL = 'https://discord.com/api/guilds/1540938382400692325/widget.json';
-const FALLBACK_INVITE = 'https://discord.com/invite/gK5yRMT3C';
+const FALLBACK_INVITE = 'https://discord.gg/h6pY6gg5WC';
 
 const STATUS_COLORS = {
     online: '#3ba55d',

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Nomad Anarchy in Your Browser (Eaglercraft)</title>
-    <meta name="description" content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
+    <meta name="description"
+        content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
     <link rel="canonical" href="https://nomadanarchy.online/eaglercraft">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Nomad Anarchy">
     <meta property="og:title" content="Play Nomad Anarchy in Your Browser (Eaglercraft)">
-    <meta property="og:description" content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
+    <meta property="og:description"
+        content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
     <meta property="og:url" content="https://nomadanarchy.online/eaglercraft">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://nomadanarchy.online/logo.png">
@@ -18,7 +21,8 @@
     <meta property="og:image:alt" content="Nomad Anarchy logo">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Play Nomad Anarchy in Your Browser (Eaglercraft)">
-    <meta name="twitter:description" content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
+    <meta name="twitter:description"
+        content="Play Nomad Anarchy in your web browser with Eaglercraft. Pick a 1.8.8 or 1.12.2 client, standard or WASM. No launcher needed.">
     <meta name="twitter:image" content="https://nomadanarchy.online/logo.png">
     <meta name="twitter:image:alt" content="Nomad Anarchy logo">
     <link rel="icon" href="/logo.png" type="image/png">
@@ -26,7 +30,7 @@
     <link rel="stylesheet" href="/style.css">
     <meta name="theme-color" content="#f4f0e4">
     <script>
-    (function(){var t='light';try{var saved=localStorage.getItem('theme');if(saved==='dark'||saved==='light'){t=saved;}}catch(e){}document.documentElement.setAttribute('data-theme',t);var meta=document.querySelector('meta[name="theme-color"]');if(meta){meta.setAttribute('content',t==='dark'?'#1a1a1a':'#f4f0e4');}})();
+        (function () { var t = 'light'; try { var saved = localStorage.getItem('theme'); if (saved === 'dark' || saved === 'light') { t = saved; } } catch (e) { } document.documentElement.setAttribute('data-theme', t); var meta = document.querySelector('meta[name="theme-color"]'); if (meta) { meta.setAttribute('content', t === 'dark' ? '#1a1a1a' : '#f4f0e4'); } })();
     </script>
     <script type="application/ld+json">
     {
@@ -55,100 +59,113 @@
     }
     </script>
 </head>
+
 <body>
-<a class="skip" href="#main">skip to content</a>
+    <a class="skip" href="#main">skip to content</a>
 
-<div class="wrap">
+    <div class="wrap">
 
-    <header>
-    <div class="site-title" translate="no"><a href="/">Nomad Anarchy</a></div>
+        <header>
+            <div class="site-title" translate="no"><a href="/">Nomad Anarchy</a></div>
 
-    <nav class="nav" aria-label="main">
-        <a href="/">main</a><span class="nav-sep">&raquo;</span>
-        <a href="/eaglercraft" aria-current="page">eaglercraft</a><span class="nav-sep">&raquo;</span>
-        <a href="/vote">vote</a><span class="nav-sep">&raquo;</span>
-        <a href="/discord" rel="noopener">discord</a>
-        <button id="theme-btn" class="theme-btn" type="button"></button>
-    </nav>
-    </header>
+            <nav class="nav" aria-label="main">
+                <a href="/">main</a><span class="nav-sep">&raquo;</span>
+                <a href="/eaglercraft" aria-current="page">eaglercraft</a><span class="nav-sep">&raquo;</span>
+                <a href="/vote">vote</a><span class="nav-sep">&raquo;</span>
+                <a href="/discord" rel="noopener">discord</a>
+                <a href="https://blog.nomadanarchy.online" rel="noopener">blog</a>
+                <button id="theme-btn" class="theme-btn" type="button"></button>
+            </nav>
+        </header>
 
-    <div class="columns">
+        <div class="columns">
 
-        <aside class="sidebar sidebar-left">
-            <div class="panel">
-                <p>server ip</p>
-                <span class="server-ip" translate="no">play.nomadanarchy.online</span>
-                <p>native version <span translate="no">1.12.2</span>. Java Edition connects from <span translate="no">1.7.10</span> through the latest release. Eaglercraft works in the browser.</p>
-            </div>
-        </aside>
-
-        <div class="center">
-            <main id="main" class="panel" tabindex="-1">
-                <div class="center-scroll">
-                    <h1>Play <span translate="no">Nomad Anarchy</span> in your browser</h1>
-                    <p>Eaglercraft is a port of Minecraft that runs in a web browser. You don't need to install anything. <span translate="no">Nomad</span> is already in the server list of each client below.</p>
-                    <p>Try the WASM builds first. If WASM won't run on your browser or machine, fall back to the standard build.</p>
-
-                    <table class="eagler-table" aria-label="Eaglercraft clients">
-                        <thead>
-                            <tr>
-                                <th scope="col">version</th>
-                                <th scope="col">build</th>
-                                <th scope="col">play</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td translate="no">Eaglercraft X 1.8.8</td>
-                                <td>standard</td>
-                                <td><a href="/game/eaglercraftx-1.8.html">play <span translate="no">1.8.8</span> standard</a></td>
-                            </tr>
-                            <tr>
-                                <td translate="no">Eaglercraft X 1.8.8</td>
-                                <td translate="no">WASM</td>
-                                <td><a href="/game/eaglercraftx-wasm-1.8.html">play <span translate="no">1.8.8</span> <span translate="no">WASM</span></a></td>
-                            </tr>
-                            <tr>
-                                <td translate="no">Eaglercraft X 1.12.2</td>
-                                <td>standard</td>
-                                <td><a href="/game/eaglercraftx-1.12.2.html">play <span translate="no">1.12.2</span> standard</a></td>
-                            </tr>
-                            <tr>
-                                <td translate="no">Eaglercraft X 1.12.2</td>
-                                <td translate="no">WASM</td>
-                                <td><a href="/game/eaglercraftx-1.12.2-wasm.html">play <span translate="no">1.12.2</span> <span translate="no">WASM</span></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p>If you get a blank screen or a crash, try a different build or a different browser.</p>
-
-                    <p class="last-updated">last updated 20th september 2026</p>
+            <aside class="sidebar sidebar-left">
+                <div class="panel">
+                    <p>server ip</p>
+                    <span class="server-ip" translate="no">play.nomadanarchy.online</span>
+                    <p>native version <span translate="no">1.12.2</span>. Java Edition connects from <span
+                            translate="no">1.7.10</span> through the latest release. Eaglercraft works in the browser.
+                    </p>
                 </div>
-            </main>
+            </aside>
+
+            <div class="center">
+                <main id="main" class="panel" tabindex="-1">
+                    <div class="center-scroll">
+                        <h1>Play <span translate="no">Nomad Anarchy</span> in your browser</h1>
+                        <p>Eaglercraft is a port of Minecraft that runs in a web browser. You don't need to install
+                            anything. <span translate="no">Nomad</span> is already in the server list of each client
+                            below.</p>
+                        <p>Try the WASM builds first. If WASM won't run on your browser or machine, fall back to the
+                            standard build.</p>
+
+                        <table class="eagler-table" aria-label="Eaglercraft clients">
+                            <thead>
+                                <tr>
+                                    <th scope="col">version</th>
+                                    <th scope="col">build</th>
+                                    <th scope="col">play</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td translate="no">Eaglercraft X 1.8.8</td>
+                                    <td>standard</td>
+                                    <td><a href="/game/eaglercraftx-1.8.html">play <span translate="no">1.8.8</span>
+                                            standard</a></td>
+                                </tr>
+                                <tr>
+                                    <td translate="no">Eaglercraft X 1.8.8</td>
+                                    <td translate="no">WASM</td>
+                                    <td><a href="/game/eaglercraftx-wasm-1.8.html">play <span
+                                                translate="no">1.8.8</span> <span translate="no">WASM</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td translate="no">Eaglercraft X 1.12.2</td>
+                                    <td>standard</td>
+                                    <td><a href="/game/eaglercraftx-1.12.2.html">play <span translate="no">1.12.2</span>
+                                            standard</a></td>
+                                </tr>
+                                <tr>
+                                    <td translate="no">Eaglercraft X 1.12.2</td>
+                                    <td translate="no">WASM</td>
+                                    <td><a href="/game/eaglercraftx-1.12.2-wasm.html">play <span
+                                                translate="no">1.12.2</span> <span translate="no">WASM</span></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>If you get a blank screen or a crash, try a different build or a different browser.</p>
+
+                        <p class="last-updated">last updated 20th september 2026</p>
+                    </div>
+                </main>
+            </div>
+
+            <aside class="sidebar sidebar-right">
+                <div class="panel">
+                    <p>world started 22 august 2026, 10:49 PM CDT.</p>
+                    <div class="discord-widget" translate="no" aria-live="polite" role="region"
+                        aria-label="Discord members online"></div>
+                    <div class="pinned-note">
+                        <ul class="links">
+                            <li><a href="/discord" rel="noopener">discord</a></li>
+                            <li><a href="https://www.youtube.com/@NomadAnarchy" rel="noopener">youtube</a></li>
+                            <li><a href="https://www.instagram.com/nomadanarchy/" rel="noopener">instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@nomadanarchy" rel="noopener">tiktok</a></li>
+                            <li><a href="/privacy">privacy policy</a></li>
+                        </ul>
+                        <p>not affiliated with Mojang or Microsoft.</p>
+                    </div>
+                </div>
+            </aside>
+
         </div>
-
-        <aside class="sidebar sidebar-right">
-            <div class="panel">
-                <p>world started 22 august 2026, 10:49 PM CDT.</p>
-                <div class="discord-widget" translate="no" aria-live="polite" role="region" aria-label="Discord members online"></div>
-                <div class="pinned-note">
-                    <ul class="links">
-                        <li><a href="/discord" rel="noopener">discord</a></li>
-                        <li><a href="https://www.youtube.com/@NomadAnarchy" rel="noopener">youtube</a></li>
-                        <li><a href="https://www.instagram.com/nomadanarchy/" rel="noopener">instagram</a></li>
-                        <li><a href="https://www.tiktok.com/@nomadanarchy" rel="noopener">tiktok</a></li>
-                        <li><a href="/privacy">privacy policy</a></li>
-                    </ul>
-                    <p>not affiliated with Mojang or Microsoft.</p>
-                </div>
-            </div>
-        </aside>
 
     </div>
 
-</div>
-
-<script src="/script.js" defer></script>
+    <script src="/script.js" defer></script>
 </body>
+
 </html>

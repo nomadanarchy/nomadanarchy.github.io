@@ -16,12 +16,18 @@
     <loc>https://nomadanarchy.online/vote</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.67</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://nomadanarchy.online/privacy</loc>
     <lastmod>2026-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nomadanarchy.online/anarchymod</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

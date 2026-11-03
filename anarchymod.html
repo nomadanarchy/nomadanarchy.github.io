@@ -28,6 +28,7 @@
     <link rel="icon" href="/logo.png" type="image/png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/version-dialog.css">
     <meta name="theme-color" content="#f4f0e4">
     <script>
         (function () { var t = 'light'; try { var saved = localStorage.getItem('theme'); if (saved === 'dark' || saved === 'light') { t = saved; } } catch (e) { } document.documentElement.setAttribute('data-theme', t); var meta = document.querySelector('meta[name="theme-color"]'); if (meta) { meta.setAttribute('content', t === 'dark' ? '#1a1a1a' : '#f4f0e4'); } })();
@@ -141,7 +142,8 @@
                         <h2>Downloads</h2>
                         <p>Click your Minecraft version to download the file.</p>
 
-                        <table class="eagler-table" aria-label="UnblockedBannedServers downloads by Minecraft version">
+                        <table id="downloads-table" class="eagler-table"
+                            aria-label="UnblockedBannedServers downloads by Minecraft version">
                             <thead>
                                 <tr>
                                     <th scope="col">series</th>
@@ -153,12 +155,19 @@
                                     <td translate="no">1.9 to 1.12</td>
                                     <td translate="no">
                                         <a href="https://github.com/nomadanarchy/UnblockBannedServers/releases/download/nightly/unblockbannedservers-mc-1.9.4-1.5.0.jar"
+                                            data-curseforge="https://www.curseforge.com/minecraft/mc-mods/unblockbannedservers/files/9399034"
+                                            data-modrinth="https://modrinth.com/mod/unblockbannedservers/version/1.5.0"
                                             rel="noopener" download>1.9.4</a> &middot;
                                         <a href="https://github.com/nomadanarchy/UnblockBannedServers/releases/download/nightly/unblockbannedservers-mc-1.10.2-1.5.0.jar"
+                                            data-curseforge="https://www.curseforge.com/minecraft/mc-mods/unblockbannedservers/files/9401034"
+                                            data-modrinth="https://modrinth.com/mod/unblockbannedservers/version/ROajZVZZ"
                                             rel="noopener" download>1.10.2</a> &middot;
                                         <a href="https://github.com/nomadanarchy/UnblockBannedServers/releases/download/nightly/unblockbannedservers-mc-1.11.2-1.5.0.jar"
+                                            data-curseforge="https://www.curseforge.com/minecraft/mc-mods/unblockbannedservers/files/9403730"
+                                            data-modrinth="https://modrinth.com/mod/unblockbannedservers/version/foVxAnFh"
                                             rel="noopener" download>1.11.2</a> &middot;
                                         <a href="https://github.com/nomadanarchy/UnblockBannedServers/releases/download/nightly/unblockbannedservers-mc-1.12.2-1.5.0.jar"
+                                            data-modrinth="https://modrinth.com/mod/unblockbannedservers/version/fz7w4wEf"
                                             rel="noopener" download>1.12.2</a>
                                     </td>
                                 </tr>
@@ -307,7 +316,7 @@
                             </tbody>
                         </table>
 
-                        <p class="last-updated">last updated 1st november 2026</p>
+                        <p class="last-updated">last updated 3rd november 2026</p>
                     </div>
                 </main>
             </div>
@@ -334,7 +343,15 @@
 
     </div>
 
+    <dialog id="version-dialog" class="version-dialog" aria-labelledby="version-dialog-title">
+        <h2 id="version-dialog-title" translate="no">Minecraft <span id="version-dialog-mc"></span></h2>
+        <p>Choose where to get this version.</p>
+        <ul class="version-options" id="version-dialog-options"></ul>
+        <button type="button" class="version-close" id="version-dialog-close">cancel</button>
+    </dialog>
+
     <script src="/script.js" defer></script>
+    <script src="/version-dialog.js" defer></script>
 </body>
 
 </html>

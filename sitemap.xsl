@@ -50,7 +50,6 @@
           <h1>Sitemap</h1>
 
           <xsl:choose>
-            <!-- Sitemap index (links to other sitemaps) -->
             <xsl:when test="sm:sitemapindex">
               <p class="count"><xsl:value-of select="count(sm:sitemapindex/sm:sitemap)"/> sitemaps</p>
               <div class="wrap">
@@ -70,7 +69,6 @@
               </div>
             </xsl:when>
 
-            <!-- Normal URL sitemap -->
             <xsl:otherwise>
               <p class="count"><xsl:value-of select="count(sm:urlset/sm:url)"/> URLs</p>
               <div class="wrap">

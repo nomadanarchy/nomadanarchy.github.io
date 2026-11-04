@@ -1,41 +1,106 @@
 (function () {
+    'use strict';
+
     var table = document.getElementById('downloads-table');
     var dialog = document.getElementById('version-dialog');
-    if (!table || !dialog || typeof dialog.showModal !== 'function') { return; }
-
     var mcLabel = document.getElementById('version-dialog-mc');
-    var list = document.getElementById('version-dialog-options');
+    var options = document.getElementById('version-dialog-options');
+    var closeButton = document.getElementById('version-dialog-close');
 
-    table.addEventListener('click', function (e) {
-        var a = e.target.closest('a');
-        if (!a || !table.contains(a)) { return; }
-        if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) { return; }
+    if (!table || !dialog || !mcLabel || !options || !closeButton) {
+        return;
+    }
+
+    function closeDialog() {
+        if (dialog.open) {
+            dialog.close();
+        }
+    }
+
+    table.addEventListener('click', function (event) {
+        var target = event.target;
+
+        if (!(target instanceof Element)) {
+            return;
+        }
+
+        var downloadLink = target.closest('a.version-link');
+
+        if (!downloadLink || !table.contains(downloadLink)) {
+            return;
+        }
+
+        if (
+            event.defaultPrevented ||
+            event.button !== 0 ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+        ) {
+            return;
+        }
 
         var sources = [];
-        if (a.dataset.modrinth) { sources.push({ label: 'Modrinth', url: a.dataset.modrinth, external: true }); }
-        if (a.dataset.curseforge) { sources.push({ label: 'CurseForge', url: a.dataset.curseforge, external: true }); }
-        sources.push({ label: 'GitHub', url: a.href, external: false });
 
-        // only GitHub exists for this version, so download directly
-        if (sources.length === 1) { return; }
+        if (downloadLink.dataset.curseforge) {
+            sources.push({
+                label: 'CurseForge',
+                url: downloadLink.dataset.curseforge
+            });
+        }
 
-        e.preventDefault();
-        mcLabel.textContent = a.textContent.trim();
-        list.textContent = '';
-        sources.forEach(function (s) {
-            var li = document.createElement('li');
-            var link = document.createElement('a');
-            link.href = s.url;
-            link.textContent = s.label;
-            link.rel = 'noopener';
-            if (s.external) { link.target = '_blank'; }
-            link.addEventListener('click', function () { dialog.close(); });
-            li.appendChild(link);
-            list.appendChild(li);
+        if (downloadLink.dataset.modrinth) {
+            sources.push({
+                label: 'Modrinth',
+                url: downloadLink.dataset.modrinth
+            });
+        }
+
+        sources.push({
+            label: 'GitHub',
+            url: downloadLink.href
         });
+
+        if (sources.length === 1) {
+            return;
+        }
+
+        if (typeof dialog.showModal !== 'function') {
+            return;
+        }
+
+        event.preventDefault();
+
+        mcLabel.textContent = downloadLink.textContent.trim();
+        options.replaceChildren();
+
+        sources.forEach(function (source) {
+            var item = document.createElement('li');
+            var link = document.createElement('a');
+
+            link.href = source.url;
+            link.textContent = source.label;
+            link.rel = 'noopener';
+
+            if (source.label !== 'GitHub') {
+                link.target = '_blank';
+            }
+
+            link.addEventListener('click', closeDialog);
+
+            item.appendChild(link);
+            options.appendChild(item);
+        });
+
         dialog.showModal();
     });
 
-    document.getElementById('version-dialog-close').addEventListener('click', function () { dialog.close(); });
-    dialog.addEventListener('click', function (e) { if (e.target === dialog) { dialog.close(); } });
+    closeButton.addEventListener('click', closeDialog);
+
+    dialog.addEventListener('click', function (event) {
+        if (event.target === dialog) {
+            closeDialog();
+        }
+    });
 })();

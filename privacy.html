@@ -39,11 +39,28 @@
         {
           "@type": "WebSite",
           "@id": "https://nomadanarchy.online/#website",
-          "publisher": { "@id": "https://nomadanarchy.online/#organization" }
+          "url": "https://nomadanarchy.online/",
+          "name": "Nomad Anarchy",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://nomadanarchy.online/#organization"
+          }
         },
         {
           "@type": "Organization",
-          "@id": "https://nomadanarchy.online/#organization"
+          "@id": "https://nomadanarchy.online/#organization",
+          "name": "Nomad Anarchy",
+          "url": "https://nomadanarchy.online/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://nomadanarchy.online/logo.png"
+          },
+          "sameAs": [
+            "https://discord.gg/gK5yRMT3C",
+            "https://www.youtube.com/@NomadAnarchy",
+            "https://www.instagram.com/nomadanarchy/",
+            "https://www.tiktok.com/@nomadanarchy"
+          ]
         },
         {
           "@type": "WebPage",
@@ -52,8 +69,26 @@
           "name": "Privacy Policy - Nomad Anarchy",
           "description": "What the Nomad Anarchy website, the Eaglercraft clients and the game server log, and which other companies can see it.",
           "inLanguage": "en",
-          "isPartOf": { "@id": "https://nomadanarchy.online/#website" },
-          "dateModified": "2026-09-20"
+          "isPartOf": {
+            "@id": "https://nomadanarchy.online/#website"
+          },
+          "dateModified": "2026-10-24",
+          "mainEntity": {
+            "@id": "https://nomadanarchy.online/privacy#privacypolicy"
+          }
+        },
+        {
+          "@type": "PrivacyPolicy",
+          "@id": "https://nomadanarchy.online/privacy#privacypolicy",
+          "name": "Nomad Anarchy Privacy Policy",
+          "url": "https://nomadanarchy.online/privacy",
+          "dateModified": "2026-10-24",
+          "publisher": {
+            "@id": "https://nomadanarchy.online/#organization"
+          },
+          "about": {
+            "@id": "https://nomadanarchy.online/#organization"
+          }
         }
       ]
     }

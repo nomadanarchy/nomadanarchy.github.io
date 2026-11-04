@@ -33,43 +33,72 @@
         (function () { var t = 'light'; try { var saved = localStorage.getItem('theme'); if (saved === 'dark' || saved === 'light') { t = saved; } } catch (e) { } document.documentElement.setAttribute('data-theme', t); var meta = document.querySelector('meta[name="theme-color"]'); if (meta) { meta.setAttribute('content', t === 'dark' ? '#1a1a1a' : '#f4f0e4'); } })();
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://nomadanarchy.online/#website",
-          "name": "Nomad Anarchy",
-          "url": "https://nomadanarchy.online/",
-          "description": "Nomad Anarchy is a Minecraft anarchy server. Griefing is allowed and the world never resets. Join at play.nomadanarchy.online or play in your browser.",
-          "publisher": { "@id": "https://nomadanarchy.online/#organization" }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://nomadanarchy.online/#organization",
-          "name": "Nomad Anarchy",
-          "url": "https://nomadanarchy.online/",
-          "logo": "https://nomadanarchy.online/logo.png",
-          "sameAs": [
-            "/discord",
-            "https://www.youtube.com/@NomadAnarchy",
-            "https://www.instagram.com/nomadanarchy/",
-            "https://www.tiktok.com/@nomadanarchy"
-          ]
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://nomadanarchy.online/#webpage",
-          "url": "https://nomadanarchy.online/",
-          "name": "Nomad Anarchy - Minecraft Anarchy Server",
-          "description": "Nomad Anarchy is a Minecraft anarchy server. Griefing is allowed and the world never resets. Join at play.nomadanarchy.online or play in your browser.",
-          "inLanguage": "en",
-          "isPartOf": { "@id": "https://nomadanarchy.online/#website" },
-          "dateModified": "2026-09-20"
-        }
-      ]
-    }
-    </script>
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://nomadanarchy.online/#website",
+                  "name": "Nomad Anarchy",
+                  "url": "https://nomadanarchy.online/",
+                  "description": "Nomad Anarchy is a Minecraft anarchy server. Griefing is allowed and the world never resets. Join at play.nomadanarchy.online or play in your browser.",
+                  "inLanguage": "en",
+                  "publisher": {
+                    "@id": "https://nomadanarchy.online/#organization"
+                  }
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://nomadanarchy.online/#organization",
+                  "name": "Nomad Anarchy",
+                  "url": "https://nomadanarchy.online/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://nomadanarchy.online/logo.png"
+                  },
+                  "sameAs": [
+                    "https://discord.gg/gK5yRMT3C",
+                    "https://www.youtube.com/@NomadAnarchy",
+                    "https://www.instagram.com/nomadanarchy/",
+                    "https://www.tiktok.com/@nomadanarchy"
+                  ]
+                },
+                {
+                  "@type": "WebPage",
+                  "@id": "https://nomadanarchy.online/#webpage",
+                  "url": "https://nomadanarchy.online/",
+                  "name": "Nomad Anarchy - Minecraft Anarchy Server",
+                  "description": "Nomad Anarchy is a Minecraft anarchy server. Griefing is allowed and the world never resets. Join at play.nomadanarchy.online or play in your browser.",
+                  "inLanguage": "en",
+                  "isPartOf": {
+                    "@id": "https://nomadanarchy.online/#website"
+                  },
+                  "dateModified": "2026-11-01",
+                  "mainEntity": {
+                    "@id": "https://nomadanarchy.online/#gameserver"
+                  }
+                },
+                {
+                  "@type": "GameServer",
+                  "@id": "https://nomadanarchy.online/#gameserver",
+                  "name": "Nomad Anarchy",
+                  "url": "https://nomadanarchy.online/",
+                  "game": {
+                    "@type": "VideoGame",
+                    "name": "Minecraft",
+                    "gamePlatform": "PC"
+                  },
+                  "serverStatus": "Online",
+                  "serverAddress": "play.nomadanarchy.online",
+                  "description": "A persistent Minecraft anarchy server with no land claims and no staff intervention. Griefing, stealing, and exploits are allowed. Native version 1.12.2, with Java Edition connections supported from 1.7.10 through the latest release. Eaglercraft is also supported in a web browser.",
+                  "playersOnline": {
+                    "@type": "QuantitativeValue",
+                    "value": 0
+                  }
+                }
+              ]
+            }
+            </script>
 </head>
 
 <body>

@@ -39,11 +39,28 @@
         {
           "@type": "WebSite",
           "@id": "https://nomadanarchy.online/#website",
-          "publisher": { "@id": "https://nomadanarchy.online/#organization" }
+          "url": "https://nomadanarchy.online/",
+          "name": "Nomad Anarchy",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://nomadanarchy.online/#organization"
+          }
         },
         {
           "@type": "Organization",
-          "@id": "https://nomadanarchy.online/#organization"
+          "@id": "https://nomadanarchy.online/#organization",
+          "name": "Nomad Anarchy",
+          "url": "https://nomadanarchy.online/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://nomadanarchy.online/logo.png"
+          },
+          "sameAs": [
+            "https://discord.gg/gK5yRMT3C",
+            "https://www.youtube.com/@NomadAnarchy",
+            "https://www.instagram.com/nomadanarchy/",
+            "https://www.tiktok.com/@nomadanarchy"
+          ]
         },
         {
           "@type": "WebPage",
@@ -52,8 +69,109 @@
           "name": "Vote for Nomad Anarchy",
           "description": "Vote for Nomad Anarchy on Minecraft server lists so more players find it. Votes also unlock formatting codes for anvil names.",
           "inLanguage": "en",
-          "isPartOf": { "@id": "https://nomadanarchy.online/#website" },
-          "dateModified": "2026-10-19"
+          "isPartOf": {
+            "@id": "https://nomadanarchy.online/#website"
+          },
+          "dateModified": "2026-10-24",
+          "mainEntity": [
+            {
+              "@id": "https://nomadanarchy.online/vote#voting-sites"
+            },
+            {
+              "@id": "https://nomadanarchy.online/vote#vote-rewards"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://nomadanarchy.online/vote#voting-sites",
+          "name": "Nomad Anarchy voting sites",
+          "description": "Minecraft server lists where players can vote for Nomad Anarchy.",
+          "numberOfItems": 7,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Eagler Server List",
+              "url": "https://eaglercraft.com/servers/nomad-anarchy"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "TopEaglerServers",
+              "url": "https://topeaglerservers.com/server/cadcc048/Nomad-Anarchy"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Minecraft.Buzz",
+              "url": "https://minecraft.buzz/vote/nomad-anarchy"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "MinecraftServers.org",
+              "url": "https://minecraftservers.org/server/692316"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Minecraft Server List",
+              "url": "https://minecraft-server-list.com/server/522885/vote"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "MCSL",
+              "url": "https://minecraft-serverlist.com/server/6248"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Minecraft MP",
+              "url": "https://minecraft-mp.com/server/363097/vote/"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://nomadanarchy.online/vote#vote-rewards",
+          "name": "Permanent anvil formatting unlocks",
+          "description": "Formatting codes unlocked permanently through voting for Nomad Anarchy.",
+          "numberOfItems": 5,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Bold",
+              "description": "Unlocked at 5 votes. Formatting code: &l."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Italic",
+              "description": "Unlocked at 10 votes. Formatting code: &o."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Underline",
+              "description": "Unlocked at 20 votes. Formatting code: &n."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Strikethrough",
+              "description": "Unlocked at 30 votes. Formatting code: &m."
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "All color codes",
+              "description": "Unlocked at 50 votes."
+            }
+          ]
         }
       ]
     }

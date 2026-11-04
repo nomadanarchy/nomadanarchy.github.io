@@ -7,7 +7,7 @@
 - [Main](https://nomadanarchy.online/): Nomad Anarchy is a Minecraft anarchy server. Griefing is allowed and the world never resets. Join at play.nomadanarchy.online or play in your browser.
 - [Eaglercraft](https://nomadanarchy.online/eaglercraft): Play Nomad Anarchy in your browser with Eaglercraft. Choose a 1.8.8 or 1.12.2 client, normal or WASM, and join. You do not need to install anything.
 - [Vote](https://nomadanarchy.online/vote): Vote for Nomad Anarchy on Minecraft server lists so more players find it. Votes also unlock formatting codes for anvil names.
-- [UnblockBannedServers](https://nomadanarchy.online/anarchymod): Download UnblockBannedServers, a free fork of 6b6t's AnarchyMod that lets you join servers on Mojang's blocked list. Fabric and Legacy Fabric, 1.9.4 to 26.3.
+- [UnblockBannedServers](https://nomadanarchy.online/anarchymod): Download UnblockBannedServers, our fork of 6b6t's AnarchyMod that unblocks every server on Mojang's blacklist, not only a fixed list. Fabric and Legacy Fabric, 1.9.4 to 26.3.
 - [Privacy](https://nomadanarchy.online/privacy): What the Nomad Anarchy website, the Eaglercraft clients and the game server log, and which other companies can see it.
 
 ## Community

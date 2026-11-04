@@ -1,4 +1,14 @@
+User-agent: Bingbot
+User-agent: msnbot
+User-agent: BingPreview
+User-agent: adidxbot
+User-agent: DuckDuckBot
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /game/
+
 User-agent: *
 Allow: /
 Disallow: /game/
+
 Sitemap: https://nomadanarchy.online/sitemap.xml

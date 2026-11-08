@@ -2,10 +2,7 @@
   "name": "Nomad Anarchy",
   "origin": "https://nomadanarchy.online",
   "defaultLocale": "en_us",
-  "locales": [
-    "en_us",
-    "ru_ru"
-  ],
+  "locales": ["en_us", "ru_ru"],
   "server": {
     "ip": "play.nomadanarchy.online",
     "worldStarted": "2026-08-22T22:49:00-05:00",

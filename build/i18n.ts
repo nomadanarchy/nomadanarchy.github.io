@@ -45,7 +45,7 @@ export const attr = (s: string): string => esc(s).replace(/"/g, "&quot;");
 
 /** Marks a string as already-safe HTML so it is not escaped when used as an argument. */
 export class Html {
-  constructor(readonly html: string) { }
+  constructor(readonly html: string) {}
 }
 export const raw = (html: string): Html => new Html(html);
 

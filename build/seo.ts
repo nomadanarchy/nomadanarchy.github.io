@@ -34,11 +34,11 @@ export function sitemapXml(data: SiteData, locales: Locale[], ctxs: Map<string, 
       const lastmod = pageUpdated(data, id);
       const alternates = multi
         ? locales
-          .map(
-            (l) =>
-              `    <xhtml:link rel="alternate" hreflang="${l.og.replace("_", "-")}" href="${attr(data.site.origin + c.pagePathIn(l, id))}"/>`,
-          )
-          .join("\n")
+            .map(
+              (l) =>
+                `    <xhtml:link rel="alternate" hreflang="${l.og.replace("_", "-")}" href="${attr(data.site.origin + c.pagePathIn(l, id))}"/>`,
+            )
+            .join("\n")
         : "";
       entries.push(
         `  <url>

@@ -1,0 +1,26 @@
+[
+  {
+    "host": "relay.deev.is",
+    "operator": "lax1dude",
+    "url": "https://deev.is",
+    "domain": "deev.is"
+  },
+  {
+    "host": "relay.lax1dude.net",
+    "operator": "lax1dude",
+    "url": "https://lax1dude.net",
+    "domain": "lax1dude.net"
+  },
+  {
+    "host": "relay.shhnowisnottheti.me",
+    "operator": "ayunami",
+    "url": "https://shhnowisnottheti.me",
+    "domain": "shhnowisnottheti.me"
+  },
+  {
+    "host": "relay.eaglercraft.com",
+    "operator": "Rule Your Own Game, Inc.",
+    "url": "https://eaglercraft.com",
+    "domain": "eaglercraft.com"
+  }
+]

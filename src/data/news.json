@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2026-11-01",
+    "id": "unblockbannedservers"
+  },
+  {
+    "date": "2026-10-24",
+    "id": "hotspots"
+  },
+  {
+    "date": "2026-10-19",
+    "id": "vote_rewards"
+  },
+  {
+    "date": "2026-10-08",
+    "id": "plugins"
+  },
+  {
+    "date": "2026-10-03",
+    "id": "render_distance"
+  },
+  {
+    "date": "2026-10-01",
+    "id": "fishing"
+  },
+  {
+    "date": "2026-09-21",
+    "id": "crash_fix"
+  },
+  {
+    "date": "2026-09-20",
+    "id": "website"
+  }
+]

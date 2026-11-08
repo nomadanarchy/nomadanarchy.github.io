@@ -1,0 +1,692 @@
+/*
+ * Every colour that differs between the themes is a variable. The dark theme
+ * only redefines the variables, so there is one copy of each rule.
+ */
+
+:root {
+  color-scheme: light;
+  --page-bg: #4c6353;
+  --bg-image: url("/bg-light.jpg");
+  --dim: rgba(0, 0, 0, 0.3);
+  --text: #2a2620;
+  --link: #33404e;
+  --link-hover: #1a2028;
+  --link-visited: #4a3a2c;
+  --surface: rgba(250, 247, 238, 0.74);
+  --surface-line: rgba(255, 255, 255, 0.75);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  --nav-hover: #000;
+  --nav-sep: #8a8270;
+  --focus: #33404e;
+  --muted: #4a4232;
+  --pinned: #403a2c;
+  --accent: #5c3a0c;
+  --scroll-track: #e4e0d0;
+  --scroll-thumb: #b0a890;
+  --scroll-thumb-hover: #9a9280;
+  --scroll-edge: #8a8270;
+  --table-line: #c0b8a4;
+  --table-head: #e4dfcc;
+  --table-stripe: rgba(0, 0, 0, 0.04);
+  --dialog-bg: #f4f0e4;
+  --dialog-text: #222;
+  --dialog-line: rgba(0, 0, 0, 0.35);
+  --option-bg: rgba(0, 0, 0, 0.06);
+  --option-line: rgba(0, 0, 0, 0.3);
+  --option-hover: rgba(0, 0, 0, 0.14);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #304125;
+  --bg-image: url("/bg-dark.jpg");
+  --dim: rgba(0, 0, 0, 0.2);
+  --text: #e8dfc4;
+  --link: #e8dfc4;
+  --link-hover: #fff;
+  --link-visited: #c8bfa4;
+  --surface: rgba(10, 10, 12, 0.6);
+  --surface-line: rgba(255, 255, 255, 0.3);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  --nav-hover: #fff;
+  --nav-sep: #555;
+  --focus: #e8dfc4;
+  --muted: #a89f84;
+  --pinned: #a89f84;
+  --accent: #f0c060;
+  --scroll-track: #1a2028;
+  --scroll-thumb: #3a4250;
+  --scroll-thumb-hover: #4a5260;
+  --scroll-edge: #000;
+  --table-line: #3a4250;
+  --table-head: #0f1418;
+  --table-stripe: rgba(0, 0, 0, 0.2);
+  --dialog-bg: #1a1a1a;
+  --dialog-text: #e8e8e8;
+  --dialog-line: rgba(255, 255, 255, 0.25);
+  --option-bg: rgba(255, 255, 255, 0.07);
+  --option-line: rgba(255, 255, 255, 0.3);
+  --option-hover: rgba(255, 255, 255, 0.16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: var(--page-bg);
+}
+
+/* The background image sits behind a flat dim layer. No blur. */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: var(--bg-image) center center / cover no-repeat;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.25;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--dim);
+  z-index: -1;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--link-hover);
+}
+a:visited {
+  color: var(--link-visited);
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 30px 10px 20px 10px;
+  position: relative;
+}
+
+/* The title stays cream in both themes. */
+.site-title {
+  text-align: center;
+  font-size: 72px;
+  font-weight: 900;
+  color: #e8dfc4;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.6),
+    0 4px 14px rgba(0, 0, 0, 0.7);
+  margin-bottom: 12px;
+}
+.site-title a,
+.site-title a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Keyboard skip link */
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+}
+.skip:focus {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  padding: 6px 10px;
+}
+
+/* Navigation bar and the translucent panels share one look. */
+.nav,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--surface-line);
+  box-shadow: var(--shadow);
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 8px auto;
+  border-radius: 6px;
+  padding: 4px 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 6px;
+  text-transform: uppercase;
+}
+.nav a:hover {
+  color: var(--nav-hover);
+  text-decoration: underline;
+}
+.nav-sep {
+  color: var(--nav-sep);
+  margin: 0 2px;
+}
+
+.theme-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 0;
+}
+.theme-btn svg {
+  display: block;
+}
+
+/* "This page is available in ..." bar, added by lang-suggest.ts */
+.lang-banner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 12px;
+  padding: 7px 40px 7px 12px;
+  text-align: center;
+  font-size: 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-line);
+  box-shadow: var(--shadow);
+}
+.lang-banner a {
+  font-weight: bold;
+}
+.lang-banner-close {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 6px;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Three columns */
+.columns {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.panel {
+  width: 100%;
+  min-width: 0;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--text);
+  height: 540px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.center .panel h1,
+.center .panel h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.center .panel p {
+  margin-bottom: 8px;
+}
+.center .panel ul,
+.center .panel ol {
+  margin-left: 18px;
+  margin-bottom: 8px;
+}
+.center .panel li {
+  margin-bottom: 3px;
+}
+
+.sidebar {
+  width: 184px;
+  flex-shrink: 0;
+  font-size: 11px;
+  display: flex;
+}
+.sidebar .panel {
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.center {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  font-size: 12px;
+}
+.center-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbars */
+.center-scroll,
+.discord-widget {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+.center-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.discord-widget::-webkit-scrollbar {
+  width: 8px;
+}
+.center-scroll::-webkit-scrollbar-track,
+.discord-widget::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border: 1px solid var(--scroll-edge);
+}
+.center-scroll::-webkit-scrollbar-thumb,
+.discord-widget::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border: 1px solid var(--scroll-edge);
+}
+.center-scroll::-webkit-scrollbar-thumb:hover,
+.discord-widget::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+.server-ip {
+  font-weight: bold;
+  user-select: all;
+  white-space: nowrap;
+  font-size: 11px;
+  display: block;
+  text-align: center;
+  margin: 6px 0;
+}
+
+/* News log */
+.news-entry {
+  margin-bottom: 12px;
+}
+.news-entry h3 {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.news-entry p {
+  margin-bottom: 4px;
+  padding-left: 8px;
+}
+
+.last-updated {
+  margin-top: 14px;
+  font-size: 10px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Tables (Eaglercraft clients, mod downloads) */
+.eagler-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 12px;
+}
+.eagler-table th,
+.eagler-table td {
+  border: 1px solid var(--table-line);
+  padding: 5px 8px;
+  text-align: left;
+}
+.eagler-table th {
+  background: var(--table-head);
+  font-weight: bold;
+  font-size: 11px;
+}
+.eagler-table tr:nth-child(even) td {
+  background: var(--table-stripe);
+}
+
+/* Vote list */
+.vote-list {
+  list-style-type: decimal;
+  margin-left: 22px;
+}
+.vote-list li {
+  margin-bottom: 6px;
+}
+.vote-list .important {
+  color: var(--accent);
+  font-weight: bold;
+}
+.vote-list a {
+  word-break: break-all;
+}
+
+/* Bottom of the right sidebar */
+.pinned-note {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  color: var(--pinned);
+}
+.pinned-note .links {
+  list-style: none;
+  margin: 4px 0;
+  padding: 0;
+}
+.pinned-note .links li {
+  margin-bottom: 2px;
+}
+/* Language menu, left end of the nav bar. A <details>, so it works without JS. */
+.lang-menu {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  text-transform: none;
+}
+.lang-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+.lang-menu summary::-webkit-details-marker {
+  display: none;
+}
+.lang-menu svg {
+  display: block;
+}
+.lang-popup {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -6px;
+  z-index: 5;
+  width: 13rem;
+  padding: 4px;
+  color: var(--dialog-text);
+  background: var(--dialog-bg);
+  border: 1px solid var(--dialog-line);
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+.lang-popup ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lang-menu li > * {
+  display: block;
+  margin: 0;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.lang-menu a {
+  margin: 0;
+  color: inherit;
+  text-transform: none;
+}
+.lang-menu li a {
+  text-decoration: none;
+}
+.lang-help {
+  margin: 4px 4px 2px;
+  padding: 6px 4px 0;
+  border-top: 1px solid var(--dialog-line);
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 1.3;
+}
+.lang-help a {
+  text-decoration: underline;
+}
+.lang-menu li a:hover,
+.lang-menu li a:focus-visible {
+  background: var(--option-hover);
+}
+.lang-menu [aria-current] {
+  opacity: 0.6;
+}
+
+/* Discord member list */
+.discord-widget {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin: 6px 0;
+  font-size: 11px;
+  line-height: 1.25;
+}
+.discord-widget p {
+  margin-bottom: 4px;
+}
+.widget-link {
+  font-weight: bold;
+  display: block;
+}
+.widget-count {
+  margin: 2px 0 6px 0;
+}
+.widget-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.widget-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+.widget-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  display: block;
+  flex-shrink: 0;
+}
+.widget-status {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+.widget-status.online {
+  background-color: #3ba55d;
+}
+.widget-status.idle {
+  background-color: #faa61a;
+}
+.widget-status.dnd {
+  background-color: #ed4245;
+}
+.widget-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Mod download dialog */
+.version-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(20rem, calc(100% - 2rem));
+  height: fit-content;
+  padding: 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--dialog-text);
+  background: var(--dialog-bg);
+  border: 1px solid var(--dialog-line);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+.version-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+.version-dialog h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+.version-dialog p {
+  margin: 0 0 0.75rem;
+}
+.version-options {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.version-options li {
+  margin: 0;
+  padding: 0;
+}
+.version-options a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  background: var(--option-bg);
+  border: 1px solid var(--option-line);
+  border-radius: 6px;
+}
+.version-options a:hover,
+.version-options a:focus-visible {
+  background: var(--option-hover);
+  outline: none;
+}
+.version-close {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.version-close:hover,
+.version-close:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.download-mirrors {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.download-mirrors a {
+  color: inherit;
+  text-decoration: none;
+}
+.download-mirrors a:hover,
+.download-mirrors a:focus-visible {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    padding: 20px 10px;
+  }
+  .lang-menu {
+    position: static;
+    transform: none;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  .lang-menu summary {
+    justify-content: center;
+  }
+  .lang-popup {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .site-title {
+    font-size: 44px;
+  }
+  .columns {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    order: 2;
+  }
+  .center {
+    order: 1;
+    width: 100%;
+  }
+  .sidebar.sidebar-right {
+    order: 3;
+  }
+  .panel {
+    height: auto;
+    min-height: 200px;
+  }
+  .center-scroll {
+    max-height: none;
+    overflow-y: visible;
+  }
+  .discord-widget {
+    flex: none;
+    max-height: 320px;
+  }
+}

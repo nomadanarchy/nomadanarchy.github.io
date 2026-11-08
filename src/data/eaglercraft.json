@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Eaglercraft X 1.8.8",
+    "version": "1.8.8",
+    "wasm": false,
+    "file": "eaglercraftx-1.8.html"
+  },
+  {
+    "label": "Eaglercraft X 1.8.8",
+    "version": "1.8.8",
+    "wasm": true,
+    "file": "eaglercraftx-wasm-1.8.html"
+  },
+  {
+    "label": "Eaglercraft X 1.12.2",
+    "version": "1.12.2",
+    "wasm": false,
+    "file": "eaglercraftx-1.12.2.html"
+  },
+  {
+    "label": "Eaglercraft X 1.12.2",
+    "version": "1.12.2",
+    "wasm": true,
+    "file": "eaglercraftx-1.12.2-wasm.html"
+  },
+  {
+    "label": "Galactic Client 8.0.0 (1.12.2)",
+    "ldName": "Galactic Client 8.0.0 (1.12.2 WASM, hacked client)",
+    "playName": "Galactic Client",
+    "version": "1.12.2",
+    "wasm": true,
+    "hacked": true,
+    "file": "Galactic-Client-8.0.0.html"
+  }
+]

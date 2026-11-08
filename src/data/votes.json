@@ -1,0 +1,18 @@
+{
+  "sites": [
+    { "name": "Eagler Server List", "url": "https://eaglercraft.com/servers/nomad-anarchy", "important": true },
+    { "name": "TopEaglerServers", "url": "https://topeaglerservers.com/server/cadcc048/Nomad-Anarchy" },
+    { "name": "Minecraft.Buzz", "url": "https://minecraft.buzz/vote/nomad-anarchy" },
+    { "name": "MinecraftServers.org", "url": "https://minecraftservers.org/server/692316" },
+    { "name": "Minecraft Server List", "url": "https://minecraft-server-list.com/server/522885/vote" },
+    { "name": "MCSL", "url": "https://minecraft-serverlist.com/server/6248" },
+    { "name": "Minecraft MP", "url": "https://minecraft-mp.com/server/363097/vote/" }
+  ],
+  "rewards": [
+    { "id": "bold", "votes": 5, "code": "&l" },
+    { "id": "italic", "votes": 10, "code": "&o" },
+    { "id": "underline", "votes": 20, "code": "&n" },
+    { "id": "strikethrough", "votes": 30, "code": "&m" },
+    { "id": "colors", "votes": 50 }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "nomadanarchy.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "biome lint .",
+    "fmt": "biome format --write .",
+    "fmt:check": "biome format .",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test ./test/",
+    "indexnow": "bun scripts/indexnow.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.6",
+    "@types/bun": "^1.4.4",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  }
+}

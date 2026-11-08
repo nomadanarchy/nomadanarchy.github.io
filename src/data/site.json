@@ -1,0 +1,71 @@
+{
+  "name": "Nomad Anarchy",
+  "origin": "https://nomadanarchy.online",
+  "defaultLocale": "en_us",
+  "locales": [
+    "en_us",
+    "ru_ru"
+  ],
+  "server": {
+    "ip": "play.nomadanarchy.online",
+    "worldStarted": "2026-08-22T22:49:00-05:00",
+    "worldStartedZone": "America/Chicago"
+  },
+  "version": {
+    "native": "1.12.2",
+    "min": "1.7.10"
+  },
+  "discord": {
+    "invite": "h6pY6gg5WC",
+    "guildId": "1540938382400692325"
+  },
+  "social": {
+    "youtube": "https://www.youtube.com/@NomadAnarchy",
+    "instagram": "https://www.instagram.com/nomadanarchy/",
+    "tiktok": "https://www.tiktok.com/@nomadanarchy"
+  },
+  "blog": {
+    "url": "https://blog.nomadanarchy.online"
+  },
+  "repo": {
+    "url": "https://github.com/nomadanarchy/nomadanarchy.github.io"
+  },
+  "mod": {
+    "repo": "https://github.com/nomadanarchy/UnblockBannedServers",
+    "modrinth": "https://modrinth.com/mod/unblockbannedservers",
+    "curseforge": "https://www.curseforge.com/minecraft/mc-mods/unblockbannedservers"
+  },
+  "themeColor": {
+    "light": "#f4f0e4",
+    "dark": "#1a1a1a"
+  },
+  "indexnow": {
+    "key": "e3ec4150899a4cac9438f55ddf8014e8"
+  },
+  "nav": [
+    {
+      "label": "nav.home",
+      "href": "@home"
+    },
+    {
+      "label": "nav.eaglercraft",
+      "href": "@eaglercraft"
+    },
+    {
+      "label": "nav.vote",
+      "href": "@vote"
+    },
+    {
+      "label": "nav.discord",
+      "href": "/discord"
+    },
+    {
+      "label": "nav.anarchymod",
+      "href": "@anarchymod"
+    },
+    {
+      "label": "nav.blog",
+      "href": "{blog.url}"
+    }
+  ]
+}

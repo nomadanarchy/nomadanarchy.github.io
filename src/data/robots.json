@@ -1,0 +1,65 @@
+{
+  "disallow": ["/game/"],
+  "named": ["DuckDuckBot", "DuckAssistBot"],
+  "blocked": [
+    {
+      "title": "SEO bots",
+      "agents": [
+        "AhrefsBot",
+        "DotBot",
+        "Mauibot",
+        "MJ12bot",
+        "PetalBot",
+        "SemrushBot",
+        "DataForSeoBot",
+        "Neevabot",
+        "MegaIndex",
+        "Seekport",
+        "Barkrowler",
+        "ImagesiftBot",
+        "BLEXBot",
+        "SenutoBot",
+        "SERankingBacklinksBot",
+        "Sogou",
+        "SeznamBot",
+        "Nutch",
+        "Scrapy",
+        "CensysInspect",
+        "omgili",
+        "DataForSeoSiteExplorer"
+      ]
+    },
+    {
+      "title": "AI bots",
+      "agents": [
+        "GPTBot",
+        "CCBot",
+        "Google-Extended",
+        "yacybot",
+        "meta-externalagent",
+        "meta-webindexer",
+        "ClaudeBot",
+        "Claude-SearchBot",
+        "AI2Bot",
+        "OAI-SearchBot",
+        "thetradedesk",
+        "carbon-umbrella-bot",
+        "PerplexityBot",
+        "Bytespider",
+        "TerraCotta",
+        "SiteSucker",
+        "Applebot",
+        "Brightbot",
+        "Aranet",
+        "SleepBot",
+        "AmazonProductDiscoveryBot",
+        "Dragonfly",
+        "YouBot",
+        "CorsairBot",
+        "NavCrawl",
+        "KeenableBot",
+        "AionBot"
+      ]
+    }
+  ]
+}

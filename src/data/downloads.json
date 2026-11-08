@@ -1,0 +1,91 @@
+{
+  "version": "1.6.0",
+  "rows": [
+    {
+      "series": [
+        "1.9",
+        "1.12"
+      ],
+      "from": "1.9.4",
+      "to": "1.12.2",
+      "curseforge": "9430808",
+      "modrinth": "1.6.0"
+    },
+    {
+      "series": [
+        "1.13"
+      ],
+      "from": "1.13",
+      "to": "1.13.2",
+      "curseforge": "9430817",
+      "modrinth": "UHYZ9Ugt"
+    },
+    {
+      "series": [
+        "1.14"
+      ],
+      "from": "1.14",
+      "to": "1.14.4",
+      "curseforge": "9430823",
+      "modrinth": "LsSPcckF"
+    },
+    {
+      "series": [
+        "1.14.4",
+        "1.16"
+      ],
+      "from": "1.14.4",
+      "to": "1.16.5",
+      "curseforge": "9430832",
+      "modrinth": "AAxIB7jh"
+    },
+    {
+      "series": [
+        "1.17"
+      ],
+      "from": "1.17",
+      "to": "1.17.1",
+      "curseforge": "9430846",
+      "modrinth": "UQH3Av9D"
+    },
+    {
+      "series": [
+        "1.18",
+        "1.20"
+      ],
+      "from": "1.18",
+      "to": "1.20.1",
+      "curseforge": "9430851",
+      "modrinth": "OAUYaRtN"
+    },
+    {
+      "series": [
+        "1.20.2",
+        "1.20.4"
+      ],
+      "from": "1.20.2",
+      "to": "1.20.4",
+      "curseforge": "9430854",
+      "modrinth": "F4rOjmsM"
+    },
+    {
+      "series": [
+        "1.20.5",
+        "1.21"
+      ],
+      "from": "1.20.5",
+      "to": "1.21.11",
+      "curseforge": "9430859",
+      "modrinth": "485zl5Nh"
+    },
+    {
+      "series": [
+        "26.x"
+      ],
+      "from": "26.1",
+      "to": "26.3",
+      "curseforge": "9430862",
+      "modrinth": "ptNYZZS2"
+    }
+  ]
+}

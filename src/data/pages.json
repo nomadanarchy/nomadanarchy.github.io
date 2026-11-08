@@ -1,0 +1,41 @@
+{
+  "home": {
+    "path": "/",
+    "changefreq": "weekly",
+    "priority": 1.0,
+    "widget": true,
+    "eaglerLink": true
+  },
+  "eaglercraft": {
+    "path": "/eaglercraft",
+    "updated": "2026-11-05",
+    "changefreq": "monthly",
+    "priority": 0.8,
+    "widget": true,
+    "eaglerLink": false
+  },
+  "vote": {
+    "path": "/vote",
+    "updated": "2026-10-24",
+    "changefreq": "monthly",
+    "priority": 0.6,
+    "widget": true,
+    "eaglerLink": true
+  },
+  "anarchymod": {
+    "path": "/anarchymod",
+    "updated": "2026-11-04",
+    "changefreq": "weekly",
+    "priority": 0.7,
+    "widget": true,
+    "eaglerLink": true
+  },
+  "privacy": {
+    "path": "/privacy",
+    "updated": "2026-10-24",
+    "changefreq": "yearly",
+    "priority": 0.3,
+    "widget": false,
+    "eaglerLink": true
+  }
+}

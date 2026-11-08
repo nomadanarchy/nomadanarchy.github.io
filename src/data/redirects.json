@@ -1,0 +1,14 @@
+{
+  "/discord": "https://discord.com/invite/{discord.invite}",
+  "/instagram": "https://www.instagram.com/nomadanarchy/",
+  "/twitter": "https://x.com/nomadanarchy",
+  "/x": "https://x.com/nomadanarchy",
+  "/youtube": "https://www.youtube.com/@NomadAnarchy",
+  "/yt": "https://www.youtube.com/@NomadAnarchy",
+  "/tiktok": "https://www.tiktok.com/@nomadanarchy",
+  "/shop": "https://nomad-anarchy.tebex.store/",
+  "/store": "https://nomad-anarchy.tebex.store/",
+  "/blog/": "{blog.url}/",
+  "/blog/posts/how-to-join-eaglercraft/": "{blog.url}/posts/how-to-join-eaglercraft/",
+  "/blog/posts/how-to-join-java-edition/": "{blog.url}/posts/how-to-join-java-edition/"
+}
